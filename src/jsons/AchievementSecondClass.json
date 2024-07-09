@@ -1,0 +1,74 @@
+{
+  "1001": {
+    "Id": 1001,
+    "Name": "丽都之旅",
+    "FirstClassId": 1,
+    "Priority": 1
+  },
+  "1003": {
+    "Id": 1003,
+    "Name": "绳匠业务",
+    "FirstClassId": 1,
+    "Priority": 3
+  },
+  "1004": {
+    "Id": 1004,
+    "Name": "代理人信赖",
+    "FirstClassId": 1,
+    "Priority": 4
+  },
+  "1005": {
+    "Id": 1005,
+    "Name": "法厄同纪事",
+    "FirstClassId": 1,
+    "Priority": 5
+  },
+  "1006": {
+    "Id": 1006,
+    "Name": "代理人秘闻",
+    "FirstClassId": 1,
+    "Priority": 6
+  },
+  "2001": {
+    "Id": 2001,
+    "Name": "零号空洞",
+    "FirstClassId": 2,
+    "Priority": 1
+  },
+  "2002": {
+    "Id": 2002,
+    "Name": "作战技巧",
+    "FirstClassId": 2,
+    "Priority": 2
+  },
+  "2003": {
+    "Id": 2003,
+    "Name": "敌对目标",
+    "FirstClassId": 2,
+    "Priority": 3
+  },
+  "2004": {
+    "Id": 2004,
+    "Name": "战斗成就",
+    "FirstClassId": 2,
+    "Priority": 4
+  },
+  "3001": {
+    "Id": 3001,
+    "Name": "空洞探索指南",
+    "FirstClassId": 3,
+    "Priority": 1
+  },
+  "3002": {
+    "Id": 3002,
+    "Name": "空洞探索指南（2）",
+    "FirstClassId": 3,
+    "Priority": 2
+  },
+  "3003": {
+    "Id": 3003,
+    "Name": "空洞探索指南（3）",
+    "FirstClassId": 3,
+    "Priority": 3
+  }
+}
