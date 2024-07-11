@@ -29,16 +29,16 @@ const { isDark } = storeToRefs(themeStore)
         </div>
         <div class="series-reward">
           <div class="reward-box">
-            <img :src="achievementStore.CopperImg" alt="铜" class="reward-img">
-            {{ showAchievementSecondClass.completedCopperAchievementsLength }}
+            <img :src="achievementStore.GoldImg" alt="金" class="reward-img">
+            {{ showAchievementSecondClass.completedGoldAchievementsLength }}
           </div>
           <div class="reward-box">
             <img :src="achievementStore.SilverImg" alt="银" class="reward-img">
             {{ showAchievementSecondClass.completedSilverAchievementsLength }}
           </div>
           <div class="reward-box">
-            <img :src="achievementStore.GoldImg" alt="金" class="reward-img">
-            {{ showAchievementSecondClass.completedGoldAchievementsLength }}
+            <img :src="achievementStore.CopperImg" alt="铜" class="reward-img">
+            {{ showAchievementSecondClass.completedCopperAchievementsLength }}
           </div>
         </div>
       </div>
