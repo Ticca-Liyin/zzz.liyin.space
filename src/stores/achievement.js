@@ -169,6 +169,108 @@ export const useAchievementStore = defineStore('achievement', () => {
             return totalAchievements
         }
 
+        // 系列铜级相关成就总数
+        get CopperAchievementsLength(){
+            const selectedMultipleIDs = []; // 记录已选择的多选一成就类型
+            let totalAchievements = 0; // 记录总共可获得的铜级成就数
+
+            for (const achievement of this.Achievements) {
+                if (achievement.isNotAvailable) continue
+
+                if (achievement.Reward !== 1) continue
+
+                const MultipleID = achievement?.MultipleID
+                if(!MultipleID){
+                    totalAchievements++
+                    continue
+                } 
+                if (selectedMultipleIDs.includes(MultipleID)){
+                    continue
+                }
+                totalAchievements++
+                selectedMultipleIDs.push(MultipleID)
+            }
+            return totalAchievements
+        }
+
+        // 系列银级相关成就总数
+        get SilverAchievementsLength(){
+            const selectedMultipleIDs = []; // 记录已选择的多选一成就类型
+            let totalAchievements = 0; // 记录总共可获得的银级成就数
+
+            for (const achievement of this.Achievements) {
+                if (achievement.isNotAvailable) continue
+
+                if (achievement.Reward !== 2) continue
+
+                const MultipleID = achievement?.MultipleID
+                if(!MultipleID){
+                    totalAchievements++
+                    continue
+                } 
+                if (selectedMultipleIDs.includes(MultipleID)){
+                    continue
+                }
+                totalAchievements++
+                selectedMultipleIDs.push(MultipleID)
+            }
+            return totalAchievements
+        }
+
+        // 系列金级相关成就总数
+        get GoldAchievementsLength(){
+            const selectedMultipleIDs = []; // 记录已选择的多选一成就类型
+            let totalAchievements = 0; // 记录总共可获得的金级成就数
+
+            for (const achievement of this.Achievements) {
+                if (achievement.isNotAvailable) continue
+
+                if (achievement.Reward !== 3) continue
+
+                const MultipleID = achievement?.MultipleID
+                if(!MultipleID){
+                    totalAchievements++
+                    continue
+                } 
+                if (selectedMultipleIDs.includes(MultipleID)){
+                    continue
+                }
+                totalAchievements++
+                selectedMultipleIDs.push(MultipleID)
+            }
+            return totalAchievements
+        }
+
+        //系列铜级相关成就已完成数
+        get completedCopperAchievementsLength(){
+            let count = 0
+
+            this.Achievements.forEach(achievement => {
+                if (achievement.Status == 3 && achievement.Reward == 1) count++
+            })
+            return count
+        }
+
+        //系列银级相关成就已完成数
+        get completedSilverAchievementsLength(){
+            let count = 0
+
+            this.Achievements.forEach(achievement => {
+                if (achievement.Status == 3 && achievement.Reward == 2) count++
+            })
+            return count
+        }
+
+        //系列金级相关成就已完成数
+        get completedGoldAchievementsLength(){
+            let count = 0
+
+            this.Achievements.forEach(achievement => {
+                if (achievement.Status == 3 && achievement.Reward == 3) count++
+            })
+            return count
+        }
+
         updateAchievements(achievements) {
             this._Achievements = achievements
         }
@@ -203,6 +305,10 @@ export const useAchievementStore = defineStore('achievement', () => {
     }
 
     const PolychromeImg= "https://act-upload.mihoyo.com/nap-obc-indep/2024/05/22/284550490/8ff8462918776b83f8d1482dbf8f1a85_6776749559242960495.png"
+    const CopperImg = "/src/images/reward/copper.png"
+    const SilverImg = "/src/images/reward/silver.png"
+    const GoldImg = "/src/images/reward/gold.png"
+
     const USER_ACHIEVEMENT_KEY = "zzz-userAchievement"
     const ACHIEVEMENT_FILTER_CONFIG_KEY = "zzz-AchievementFilterConfig"
 
@@ -668,6 +774,9 @@ export const useAchievementStore = defineStore('achievement', () => {
 
     return {  
         PolychromeImg, 
+        CopperImg,
+        SilverImg,
+        GoldImg,
         achievements,
         achievementFirstClasses,
         achievementSecondClasses,

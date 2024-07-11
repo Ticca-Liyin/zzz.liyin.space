@@ -27,6 +27,20 @@ const { isDark } = storeToRefs(themeStore)
           {{showAchievementSecondClass.completedPolychromeTotal}} / {{showAchievementSecondClass.PolychromeTotal}}
           <img :src="achievementStore.PolychromeImg" alt="星琼">
         </div>
+        <div class="series-reward">
+          <div class="reward-box">
+            <img :src="achievementStore.CopperImg" alt="铜" class="reward-img">
+            {{ showAchievementSecondClass.completedCopperAchievementsLength }}
+          </div>
+          <div class="reward-box">
+            <img :src="achievementStore.SilverImg" alt="银" class="reward-img">
+            {{ showAchievementSecondClass.completedSilverAchievementsLength }}
+          </div>
+          <div class="reward-box">
+            <img :src="achievementStore.GoldImg" alt="金" class="reward-img">
+            {{ showAchievementSecondClass.completedGoldAchievementsLength }}
+          </div>
+        </div>
       </div>
       <!-- <div class="series-bg-image">
         <img :src="isDark ? showAchievementSecondClass.imageDarkPath : showAchievementSecondClass.imagePath" :alt="showAchievementSecondClass.Name">
@@ -37,7 +51,7 @@ const { isDark } = storeToRefs(themeStore)
 
 <style scoped>
 .series-container{
-    height: 90px;
+    height: 100px;
     user-select: none;
     position: relative;
     padding: 0 10px;
@@ -49,7 +63,7 @@ const { isDark } = storeToRefs(themeStore)
     flex-direction: column;
     justify-content: center;
     min-width: 100px;
-    height: 90px;
+    height: 100px;
     line-height: 23px;
     text-align: center;
     position: relative;
@@ -100,14 +114,31 @@ const { isDark } = storeToRefs(themeStore)
     draggable: false;
     -webkit-user-drag: none;
 }
+.series-reward {
+  display: flex;
+  margin-top: 2px;
+}
+.reward-box {
+  margin: 0 5px; 
+  display: flex; 
+  align-items: center;
+  font-size: 13px;
+}
+.reward-img {
+  width: 18px;
+  height: 18px;
+  margin-right: 2px;
+  draggable: false;
+  -webkit-user-drag: none;
+}
 
 @media (max-width: 768px){
     .series-container{
-      height: 70px;
+      height: 75px;
     }
     .series{
         min-width: 80px;
-        height: 70px;
+        height: 75px;
         line-height: 18px;
     }
     .series-title{
@@ -126,6 +157,17 @@ const { isDark } = storeToRefs(themeStore)
         width: 15px;
         height: 15px;
         margin: 0 5px;
+    }
+    .series-reward {
+      margin-top: 0px;
+    }
+    .reward-box {
+      font-size: 11px;
+    }
+    .reward-img {
+      width: 12px;
+      height: 12px;
+      margin-right: 1px;
     }
 }
 </style>

@@ -26,10 +26,10 @@ import AchievementSelectAll from '@/views/Setting/AchievementSelectAllSecondConf
             赞助页面：
             <a href="https://afdian.net/a/ticca" target="_blank" class="afadian-link">爱发电</a>
         </div>
-        <!-- <div class="github">
+        <div class="github">
             开源地址：
-            <a href="" target="_blank" class="github-link">GitHub</a>
-        </div> -->
+            <a href="https://github.com/Ticca-Liyin/zzz.liyin.space" target="_blank" class="github-link">GitHub</a>
+        </div>
     </div>
 </template>
 
