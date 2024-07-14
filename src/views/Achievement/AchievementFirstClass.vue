@@ -3,9 +3,13 @@ import { ArrowRight } from '@element-plus/icons-vue';
 import { computed } from 'vue'
 import { storeToRefs } from 'pinia';
 import { useAchievementStore } from '@/stores/achievement';
+import { useIsMobileStore } from '@/stores/isMobile'
 
 const achievementStore = useAchievementStore();
 const { achievementFirstClasses, showFirstClassId, showSecondClassId } = storeToRefs(achievementStore)
+
+const isMobileStore = useIsMobileStore()
+const { isMobile } = storeToRefs(isMobileStore)
 
 const props = defineProps({
   hadFold: Boolean
@@ -13,7 +17,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <el-popover placement="right-start" popper-style="width: 80px;min-width: 80px; padding: 0;" rigger="click">
+  <el-popover placement="right-start" popper-style="width: 80px;min-width: 80px; padding: 0;" :trigger="isMobile ? 'click' : 'hover'">
     <template #reference>
       <div class="achievement-first-class" :class="{'achievement-first-class-fold': hadFold }">
         <div class="achievement-first-class-name">{{ achievementFirstClasses[showFirstClassId]?.Name ?? '未知' }}</div> 

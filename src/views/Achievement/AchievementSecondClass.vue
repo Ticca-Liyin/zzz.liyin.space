@@ -1,5 +1,6 @@
 <script setup>
 import AchievementFirstClass from './AchievementFirstClass.vue';
+import AchievementReward from './AchievementReward.vue';
 import { ArrowDown, ArrowUp } from '@element-plus/icons-vue';
 import { onMounted, ref, watch } from 'vue';
 import { storeToRefs } from 'pinia';
@@ -100,20 +101,25 @@ const endSeriesDrag = () => {
             <div class="series-navigation" :class="{'series-fold': hadFold}" v-for="secondClass in achievementStore.showAchievementSecondClasseses" :key="secondClass.Id">
                 <RouterLink v-if="secondClass.AchievementsLength + secondClass.notAvailableAchievementsLengeh !== 0"
                 :to="`/achievement/${showFirstClassId}/${secondClass.Id}`" :class="{'selected': showSecondClassId === secondClass.Id}" v-preventDragStart="true">
-                    <div class="series" :class="{'series-fold': hadFold}">
-                        <div class="series-title">
-                            {{secondClass.Name}}
-                        </div>
-                        <div class="series-count">
-                            {{secondClass.completedAchievementsLength}} / {{secondClass.AchievementsLength}}
-                            <span v-if="secondClass.notAvailableAchievementsLengeh" class="series-count-not-available">+{{ secondClass.notAvailableAchievementsLengeh }}</span>
-                            ({{secondClass.completedPercentage}})
-                        </div>
-                        <div class="series-Polychrome" v-if="!hadFold">
-                            {{secondClass.completedPolychromeTotal}} / {{secondClass.PolychromeTotal}}
-                            <img :src="achievementStore.PolychromeImg" alt="菲林">
-                        </div>
-                    </div>
+                    <el-popover placement="bottom" offset="-5" width="fit-content" trigger="hover">
+                        <template #reference>
+                            <div class="series" :class="{'series-fold': hadFold}">
+                                <div class="series-title">
+                                    {{secondClass.Name}}
+                                </div>
+                                <div class="series-count">
+                                    {{secondClass.completedAchievementsLength}} / {{secondClass.AchievementsLength}}
+                                    <span v-if="secondClass.notAvailableAchievementsLengeh" class="series-count-not-available">+{{ secondClass.notAvailableAchievementsLengeh }}</span>
+                                    ({{secondClass.completedPercentage}})
+                                </div>
+                                <div class="series-Polychrome" v-if="!hadFold">
+                                    {{secondClass.completedPolychromeTotal}} / {{secondClass.PolychromeTotal}}
+                                    <img :src="achievementStore.PolychromeImg" alt="菲林">
+                                </div>
+                            </div>
+                        </template>
+                        <AchievementReward :achievementSecondClass="secondClass"/>
+                    </el-popover>
                     <!-- <div class="series-bg-image">
                         <img :src="isDark ? secondClass.imageDarkPath : secondClass.imagePath" :alt="secondClass.SeriesTitle">
                     </div> -->
