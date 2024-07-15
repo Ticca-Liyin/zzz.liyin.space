@@ -101,7 +101,7 @@ const endSeriesDrag = () => {
             <div class="series-navigation" :class="{'series-fold': hadFold}" v-for="secondClass in achievementStore.showAchievementSecondClasseses" :key="secondClass.Id">
                 <RouterLink v-if="secondClass.AchievementsLength + secondClass.notAvailableAchievementsLengeh !== 0"
                 :to="`/achievement/${showFirstClassId}/${secondClass.Id}`" :class="{'selected': showSecondClassId === secondClass.Id}" v-preventDragStart="true">
-                    <el-popover placement="bottom" offset="-5" width="fit-content" trigger="hover">
+                    <el-popover placement="bottom" :offset="-5" width="fit-content" popper-style="min-width: 60px;" trigger="hover" :enterable="false">
                         <template #reference>
                             <div class="series" :class="{'series-fold': hadFold}">
                                 <div class="series-title">

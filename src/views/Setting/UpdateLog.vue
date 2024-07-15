@@ -8,9 +8,9 @@ const { isMobile } = storeToRefs(isMobileStore)
 const updateLogInfo = [
     { 
         version: '1.0.4', 
-        date: '2024-07-14', 
-        title: '新增成就系列悬浮窗口金银铜三档已完成成就个数显示',
-        changes: '<ul style="padding-left: 10px;"><li>新增成就系列悬浮窗口金银铜三档已完成成就个数显示，便于与游戏内已完成成就数进行比对</li></ul>' 
+        date: '2024-07-15', 
+        title: '新增成就系列悬浮窗口金银铜三档已完成成就个数显示, 优化成就筛选功能',
+        changes: '<ul style="padding-left: 10px;"><li>新增成就系列悬浮窗口金银铜三档已完成成就个数显示，便于与游戏内已完成成就数进行比对</li><li>优化成就筛选功能，新增更多的筛选类型，设置界面新增成就筛选配置缓存选项便于自行取舍是否保留筛选缓存</li></ul>' 
     },
     { 
         version: '1.0.3', 

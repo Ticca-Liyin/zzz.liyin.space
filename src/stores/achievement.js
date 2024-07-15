@@ -2,6 +2,7 @@ import { nextTick, watch, computed, ref } from 'vue'
 import { defineStore, storeToRefs } from 'pinia'
 import { useAuthorStore } from '@/stores/author'
 import { useUserInfoStore } from '@/stores/userInfo'
+import { useSettingStore } from '@/stores/setting'
 import { achievementInfoVersion, achievementFirstClassVersion, achievementSecondClassVersion, multipleChoiceVersion,
      notAvailableAchievementVersion, achievementStrategyVersion, strategyInfoVersion } 
      from '@/utils/version.js'
@@ -12,6 +13,8 @@ const { authors } = storeToRefs(authorStore)
 const userInfoStore = useUserInfoStore()
 const { currentUserInfo } = storeToRefs(userInfoStore)
 
+const settingStore = useSettingStore()
+const { achievementFilterCacheConfig } = storeToRefs(settingStore)
 
 export const useAchievementStore = defineStore('achievement', () => {
     class Achievement {
@@ -20,7 +23,7 @@ export const useAchievementStore = defineStore('achievement', () => {
             this.SecondClassId = achievement.SecondClassId
             this.Name = achievement.Name
             this.Desc = achievement.Desc
-            this.Priority = achievement.Priority
+            // this.Priority = achievement.Priority
             this.Reward = achievement.Reward
             this.Hidden = achievement.Hidden
             this.Version = achievement.Version
@@ -603,10 +606,75 @@ export const useAchievementStore = defineStore('achievement', () => {
     })
     //搜索文本
     const searchContent = ref("")
-    //隐藏已完成
-    const hiddenCompleted = ref(false)
-    //隐藏暂不可获得
-    const hiddenNotAvailable = ref(false)
+    //隐藏类成就筛选
+    const showHiddenType = ref('all')
+    const selectHiddenList = [
+        {
+            value: 'all',
+            label: '全部'
+        },
+        {
+            value: 'hidden',
+            label: '隐藏'
+        },
+        {
+            value: 'unhidden',
+            label: '非隐藏'
+        }
+    ]
+    //奖励类成就筛选
+    const showRewardType = ref('all')
+    const selectRewardList = [
+        {
+            value: 'all',
+            label: '全部'
+        },
+        {
+            value: 'gold',
+            label: '金'
+        },
+        {
+            value: 'silver',
+            label: '银'
+        },
+        {
+            value: 'copper',
+            label: '铜'
+        }
+    ]
+    //完成程度类成就筛选
+    const showCompletedType = ref('all')
+    const selectCompletedList = [
+        {
+            value: 'all',
+            label: '全部'
+        },
+        {
+            value: 'completed',
+            label: '已完成'
+        },
+        {
+            value: 'uncompleted',
+            label: '未完成'
+        }
+    ]
+    //获取状态类成就筛选
+    const showAvailableType = ref('all')
+    const selectAvailableList = [
+        {
+            value: 'all',
+            label: '全部'
+        },
+        {
+            value: 'available',
+            label: '可获取'
+        },
+        {
+            value: 'not-available',
+            label: '暂不可获取'
+        }
+    ]
+
     //未完成优先
     const incompletePriority = ref(false)
 
@@ -618,15 +686,57 @@ export const useAchievementStore = defineStore('achievement', () => {
         else tempShowAchievements = tempSecondClass.Achievements
 
         tempShowAchievements = tempShowAchievements.filter(achievement =>{
-            //隐藏已完成成就
-            if(hiddenCompleted.value)
-                if(achievement.Status !== 1)
-                    return false
+            // 隐藏类成就筛选
+            if(showHiddenType.value !== 'all') {
+                if(showHiddenType.value === 'hidden'){
+                    if(!achievement.isHidden)
+                        return false
+                }
+                else if(showHiddenType.value === 'unhidden'){
+                    if(achievement.isHidden)
+                        return false                    
+                }
+            }
 
-            //隐藏暂不可获得成就
-            if(hiddenNotAvailable.value)
-                if(achievement.isNotAvailable)
-                    return false
+            // 奖励类成就筛选
+            if(showRewardType.value !== 'all') {
+                if(showRewardType.value === 'gold'){
+                    if(achievement.Reward != 3)
+                        return false
+                }
+                else if(showRewardType.value === 'silver'){
+                    if(achievement.Reward != 2)
+                        return false                    
+                }
+                else if(showRewardType.value === 'copper'){
+                    if(achievement.Reward != 1)
+                        return false                    
+                }
+            }
+
+            // 完成程度类成就筛选
+            if(showCompletedType.value !== 'all') {
+                if(showCompletedType.value === 'completed'){
+                    if(achievement.Status === 1)
+                        return false
+                }
+                else if(showCompletedType.value === 'uncompleted'){
+                    if(achievement.Status !== 1)
+                        return false
+                }
+            }
+
+            // 获取状态类成就筛选
+            if(showAvailableType.value !== 'all') {
+                if(showAvailableType.value === 'available'){
+                    if(achievement.isNotAvailable)
+                        return false
+                }
+                else if(showAvailableType.value === 'not-available'){
+                    if(!achievement.isNotAvailable)
+                        return false
+                }
+            }
 
             //版本筛选
             if(showVersionList.value.length > 0)
@@ -664,6 +774,8 @@ export const useAchievementStore = defineStore('achievement', () => {
 
     //获取成就界面筛选设置缓存
     const getAchievementFilterConfig = () => {
+        if(!achievementFilterCacheConfig.value) return
+
         // 从缓存中读取名为 ACHIEVEMENT_FILTER_CONFIG_KEY 的数据
         const tempAchievementFilter = localStorage.getItem(ACHIEVEMENT_FILTER_CONFIG_KEY)
 
@@ -672,27 +784,31 @@ export const useAchievementStore = defineStore('achievement', () => {
             // 数据存在，将其从字符串转换为对象
             const data = JSON.parse(tempAchievementFilter)
 
-            hiddenCompleted.value = data?.hiddenCompleted ?? false
-            hiddenNotAvailable.value = data?.hiddenNotAvailable ?? false
+            showHiddenType.value = data?.showHiddenType ?? "all"
+            showRewardType.value = data?.showRewardType ?? "all"
+            showCompletedType.value = data?.showCompletedType ?? "all"
+            showAvailableType.value = data?.showAvailableType ?? "all"
             incompletePriority.value = data?.incompletePriority ?? false
         } else {
             // 数据不存在，执行相应的操作
-            hiddenCompleted.value = false
-            hiddenNotAvailable.value = false
             incompletePriority.value = false
         }
     }
     //保存成就界面筛选设置缓存
     const saveAchievementFilterConfig = () => {
+        if(!achievementFilterCacheConfig.value) return
+
         // 将对象转换为字符串，并将其存储在缓存中
         localStorage.setItem(ACHIEVEMENT_FILTER_CONFIG_KEY, JSON.stringify({
-            hiddenCompleted: hiddenCompleted.value,
-            hiddenNotAvailable: hiddenNotAvailable.value,
+            showHiddenType: showHiddenType.value,
+            showRewardType: showRewardType.value,
+            showCompletedType: showCompletedType.value,
+            showAvailableType: showAvailableType.value,
             incompletePriority: incompletePriority.value
         }))
     }
 
-    watch([hiddenCompleted, hiddenNotAvailable, incompletePriority], saveAchievementFilterConfig)
+    watch([showHiddenType, showRewardType, showCompletedType, showAvailableType, incompletePriority, achievementFilterCacheConfig], saveAchievementFilterConfig)
 
     //全选本页
     const selectAll = computed(() => {
@@ -792,8 +908,14 @@ export const useAchievementStore = defineStore('achievement', () => {
         showVersionList,
         selectVersionList,
         searchContent,
-        hiddenCompleted,
-        hiddenNotAvailable,
+        showHiddenType,
+        selectHiddenList,
+        showRewardType,
+        selectRewardList,
+        showCompletedType,
+        selectCompletedList,
+        showAvailableType,
+        selectAvailableList,
         incompletePriority,
         selectAll,
         saveUserAchievement,
