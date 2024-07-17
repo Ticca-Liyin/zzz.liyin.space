@@ -7,6 +7,12 @@ const { isMobile } = storeToRefs(isMobileStore)
 
 const updateLogInfo = [
     { 
+        version: '1.0.5', 
+        date: '2024-07-17', 
+        title: '修复编辑及添加账号时无法输入10位uid的问题, 优化手机端成就界面及角色界面的悬浮窗口位置为左边',
+        changes: '<ul style="padding-left: 10px;"><li>修复编辑及添加账号时无法输入10位uid的问题</li><li>优化手机端成就界面及角色界面的悬浮窗口位置为左边</li></ul>' 
+    },
+    { 
         version: '1.0.4', 
         date: '2024-07-15', 
         title: '新增成就系列悬浮窗口金银铜三档已完成成就个数显示, 优化成就筛选功能',

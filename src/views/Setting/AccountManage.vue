@@ -13,6 +13,10 @@ const userInfoStore = useUserInfoStore()
 const { userInfoList, currentUserInfo } = storeToRefs(userInfoStore)
 const { handleCurrentTokenID, addUserInfo, editUserInfo, deleteUserInfo } = userInfoStore
 
+const nameMaxLength = 10
+const uidMinLength = 8
+const uidMaxLength = 10
+
 const addDialog = ref(false)
 const editDialog = ref(false)
 const editInfo = ref({})
@@ -173,10 +177,10 @@ const handleCloseEditDialog = (done) => {
                 </el-select>
             </el-form-item>
             <el-form-item label="名称">
-                <el-input v-model="name" placeholder="请输入名称" clearable maxlength="10"/>
+                <el-input v-model="name" placeholder="请输入名称" clearable :maxlength="nameMaxLength"/>
             </el-form-item>
             <el-form-item label="UID">
-                <el-input v-model.number="uid" placeholder="请输入UID" clearable maxlength="9"/>
+                <el-input v-model.number="uid" placeholder="请输入UID" clearable :maxlength="uidMaxLength"/>
             </el-form-item>
         </el-form>
         <template #footer>
@@ -223,10 +227,10 @@ const handleCloseEditDialog = (done) => {
                 </el-select>
             </el-form-item>
             <el-form-item label="名称">
-                <el-input v-model="name" placeholder="请输入名称" clearable maxlength="10"/>
+                <el-input v-model="name" placeholder="请输入名称" clearable :maxlength="nameMaxLength"/>
             </el-form-item>
             <el-form-item label="UID">
-                <el-input v-model.number="uid" placeholder="请输入UID" clearable maxlength="9"/>
+                <el-input v-model.number="uid" placeholder="请输入UID" clearable :maxlength="uidMaxLength"/>
             </el-form-item>
         </el-form>
         <template #footer>

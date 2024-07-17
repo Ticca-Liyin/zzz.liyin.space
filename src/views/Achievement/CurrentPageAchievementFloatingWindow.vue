@@ -2,18 +2,22 @@
 import FloatingWindow from '@/components/FloatingWindow.vue';
 import AchievementReward from './AchievementReward.vue';
 import { useAchievementStore } from '@/stores/achievement';
+import { useIsMobileStore } from '@/stores/isMobile'
 import { useThemeStore } from '@/stores/theme'
 import { storeToRefs } from 'pinia';
 
 const achievementStore = useAchievementStore()
 const { showAchievementSecondClass } = storeToRefs(achievementStore);
 
+const isMobileStore = useIsMobileStore()
+const { isMobile } = storeToRefs(isMobileStore)
+
 const themeStore = useThemeStore()
 const { isDark } = storeToRefs(themeStore)
 </script>
 
 <template>
-  <FloatingWindow>
+  <FloatingWindow :displayPosition="isMobile ? 'left' : 'right'">
     <div class="series-container">
       <div class="series">
         <div class="series-title">

@@ -791,6 +791,10 @@ export const useAchievementStore = defineStore('achievement', () => {
             incompletePriority.value = data?.incompletePriority ?? false
         } else {
             // 数据不存在，执行相应的操作
+            showHiddenType.value = "all"
+            showRewardType.value = "all"
+            showCompletedType.value = "all"
+            showAvailableType.value = "all"
             incompletePriority.value = false
         }
     }
