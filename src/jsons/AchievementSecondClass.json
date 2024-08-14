@@ -29,6 +29,12 @@
     "FirstClassId": 1,
     "Priority": 6
   },
+  "1007": {
+    "Id": 1007,
+    "Name": "独家视界",
+    "FirstClassId": 1,
+    "Priority": 7
+  },
   "2001": {
     "Id": 2001,
     "Name": "零号空洞",
