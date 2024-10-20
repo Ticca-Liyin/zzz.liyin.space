@@ -1,8 +1,8 @@
-export const achievementInfoVersion = '1.1.0'
+export const achievementInfoVersion = '1.2.0'
 
 export const achievementFirstClassVersion = '1.0.0'
 
-export const achievementSecondClassVersion = '1.1.0'
+export const achievementSecondClassVersion = '1.2.0'
 
 export const multipleChoiceVersion = '1.0.0'
 

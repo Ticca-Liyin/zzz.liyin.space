@@ -80,12 +80,16 @@ const checkLiyin = (jsonData) => {
     importAchievementList.value = []
     importNum.value = 0
     achievements.value.forEach(achievement => AchievementIDs.push(achievement.Id))
+    
 
     for(const id in jsonAchievementList){
         if(AchievementIDs.includes(jsonAchievementList[id]?.id) && statusList.includes(jsonAchievementList[id]?.status)){
             importNum.value++
             if(jsonAchievementList[id]?.status === 3)
                 importAchievementList.value.push(jsonAchievementList[id])
+        }
+        else{
+            console.log(jsonAchievementList[id])
         }
     }
 }

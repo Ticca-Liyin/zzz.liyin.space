@@ -35,6 +35,18 @@
     "FirstClassId": 1,
     "Priority": 7
   },
+  "1008": {
+    "Id": 1008,
+    "Name": "际会之时",
+    "FirstClassId": 1,
+    "Priority": 8
+  },
+  "10079": {
+    "Id": 1009,
+    "Name": "绳网热议",
+    "FirstClassId": 1,
+    "Priority": 9
+  },
   "2001": {
     "Id": 2001,
     "Name": "零号空洞",
@@ -67,7 +79,7 @@
   },
   "3002": {
     "Id": 3002,
-    "Name": "空洞探索指南（2）",
+    "Name": "零号密钥",
     "FirstClassId": 3,
     "Priority": 2
   },
