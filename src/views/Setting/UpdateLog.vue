@@ -7,6 +7,12 @@ const { isMobile } = storeToRefs(isMobileStore)
 
 const updateLogInfo = [
     { 
+        version: '1.2.1', 
+        date: '2024-10-20', 
+        title: '将“完美闪避”成就设置为暂不可获得成就，新增1.2版本角色，修复导入成就功能存在的部分问题',
+        changes: '<ul style="padding-left: 10px;"><li>将“完美闪避”成就设置为暂不可获得成就</li><li>新增1.2版本角色</li><li>修复导入成就功能存在的部分问题</li></ul>' 
+    },
+    { 
         version: '1.2.0', 
         date: '2024-09-26', 
         title: '新增1.2版本成就',

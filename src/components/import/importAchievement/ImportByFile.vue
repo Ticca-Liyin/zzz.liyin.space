@@ -83,6 +83,11 @@ const checkLiyin = (jsonData) => {
     
 
     for(const id in jsonAchievementList){
+        if(jsonAchievementList[id]?.id && typeof jsonAchievementList[id]?.id === 'string'){
+            console.log(jsonAchievementList[id])
+            jsonAchievementList[id].id = +jsonAchievementList[id].id
+        }
+
         if(AchievementIDs.includes(jsonAchievementList[id]?.id) && statusList.includes(jsonAchievementList[id]?.status)){
             importNum.value++
             if(jsonAchievementList[id]?.status === 3)
