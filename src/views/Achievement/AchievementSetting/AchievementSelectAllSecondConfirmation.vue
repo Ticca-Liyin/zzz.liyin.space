@@ -1,5 +1,5 @@
 <script setup>
-import { useSettingStore } from '@/stores/setting.js'
+import { useSettingStore } from '@/stores/achievementSetting.js'
 
 const settingStore = useSettingStore()
 
@@ -26,12 +26,14 @@ const settingStore = useSettingStore()
 
 <style scoped>
 .setting-title {
-    color: var(--liyin-text-color);
-    font-size: 16px;
-    margin: 10px 10px;
+    color: var(--liyin-textjion-text-color);
+    /* font-size: 16px;
+    margin: 10px 10px; */
+    margin: 10px 0;
 }
 .setting-view{
-    margin: 0 10px;
+    /* margin: 0 10px; */
+    margin: 0;
 }
 
 </style>

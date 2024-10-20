@@ -2,7 +2,9 @@ import { nextTick, watch, computed, ref } from 'vue'
 import { defineStore, storeToRefs } from 'pinia'
 import { useAuthorStore } from '@/stores/author'
 import { useUserInfoStore } from '@/stores/userInfo'
-import { useSettingStore } from '@/stores/setting'
+import { useTextjoinStore } from '@/stores/textjoin.js'
+import { useSettingStore } from '@/stores/achievementSetting'
+import { useAchievementCustomNotAchievedStore } from '@/stores/achievementCustomNotAchieved'
 import { achievementInfoVersion, achievementFirstClassVersion, achievementSecondClassVersion, multipleChoiceVersion,
      notAvailableAchievementVersion, achievementStrategyVersion, strategyInfoVersion } 
      from '@/utils/version.js'
@@ -10,24 +12,63 @@ import { achievementInfoVersion, achievementFirstClassVersion, achievementSecond
 const authorStore = useAuthorStore()
 const { authors } = storeToRefs(authorStore)
 
+const textjoinStore = useTextjoinStore();
+const { textjoinSelectList, getUserTextjoinValue } = textjoinStore;
+
 const userInfoStore = useUserInfoStore()
 const { currentUserInfo } = storeToRefs(userInfoStore)
 
 const settingStore = useSettingStore()
 const { achievementFilterCacheConfig } = storeToRefs(settingStore)
 
+const achievementCustomNotAchievedStore = useAchievementCustomNotAchievedStore()
+const { getUserCustomNotAchieved, findUserCustomNotAchievedList, handleUserCustomNotAchievedList } = achievementCustomNotAchievedStore
+
+const malePattern = /\{M#([^\}]+)\}/g
+const femalePattern = /\{F#([^\}]+)\}/g
+
 export const useAchievementStore = defineStore('achievement', () => {
     class Achievement {
         constructor(achievement) {
             this.Id = achievement.Id
             this.SecondClassId = achievement.SecondClassId
-            this.Name = achievement.Name
-            this.Desc = achievement.Desc
+            this.SrcName = achievement.Name
+            this.SrcDesc = achievement.Desc
             // this.Priority = achievement.Priority
             this.Reward = achievement.Reward
             this.Hidden = achievement.Hidden
             this.Version = achievement.Version
             this.Status = 1
+        }
+
+        get Name() {
+            let result = this.SrcName
+
+            result = result.replace(malePattern, (match, title) => {
+                return getUserTextjoinValue(currentUserInfo.value.tokenID.toString(), '性别') === '男' ? result.replace(match, title) : '';
+            })
+
+            result = result.replace(femalePattern, (match, title) => {
+                return getUserTextjoinValue(currentUserInfo.value.tokenID.toString(), '性别') === '女' ? result.replace(match, title) : '';
+            })
+
+            return result
+        }
+
+        get Desc(){
+            return this.SrcDesc
+
+            let result = this.SrcDesc
+
+            result = result.replace(malePattern, (match, title) => {
+                return getUserTextjoinValue(currentUserInfo.value.tokenID.toString(), '性别') === '男' ? result.replace(match, title) : '';
+            })
+
+            result = result.replace(femalePattern, (match, title) => {
+                return getUserTextjoinValue(currentUserInfo.value.tokenID.toString(), '性别') === '女' ? result.replace(match, title) : '';
+            })
+
+            return result
         }
         
         get isHidden(){
@@ -50,6 +91,7 @@ export const useAchievementStore = defineStore('achievement', () => {
         }
 
         get StatusDesc(){
+            if(this.CustomNotAchieved) return "自定义暂不可获得"
             if(this.isNotAvailable) return "暂不可获得"
             if(this.Status === 1) return "未完成"
             if(this.Status === 2) return "已选其他"
@@ -320,6 +362,7 @@ export const useAchievementStore = defineStore('achievement', () => {
         // 对 暂时无法获得但因特殊情况状态时已获得的进行修正 由于会重复赋值 已赋值的 timestamp 若出现性能问题可进行优化
         initialNotAvailable()
         // console.log("userInfoStore", newValue)
+        initialAchievementsCustomNotAchievedStatus()
     })
 
     //用户成就状态列表
@@ -433,6 +476,56 @@ export const useAchievementStore = defineStore('achievement', () => {
         }
     }
 
+    //初始化自定义暂不可获取
+    const initialAchievementsCustomNotAchievedStatus = () => {
+        const userCustomNotAchievedList = findUserCustomNotAchievedList()?.list ?? []
+        
+        const isMultipleCustomNotAchievedList = []  // 已设为自定义暂不可获取的多选一成就 ID 列表
+        achievements.value.forEach(achievement => {
+            const userAch_ = userCustomNotAchievedList[achievement.Id]
+            // console.log(userAch_)
+            if(isMultipleCustomNotAchievedList.includes(achievement.Id)) return
+            else if(!userAch_) achievement.CustomNotAchieved = false
+            else if(userAch_.status === false) {
+                achievement.CustomNotAchieved = userAch_.status
+            }
+            else if(userAch_.status === true && achievement?.MultipleID) {
+                achievement.CustomNotAchieved = userAch_.status
+                isMultipleCustomNotAchievedList.push(achievement.Id)
+                // 自定义暂不可获得，判断当前状态，若状态为非未完成状态则进行修正
+                if(achievement.Status !== 1){
+                    achievement.Status = 1
+                    handleUserAchievementList(achievement.Id, achievement.Status)
+                }
+                multipleChoice[achievement.MultipleID].forEach(AchievementID => {
+                    if(AchievementID === achievement.Id) return
+                    const ach_ = achievements.value.find(ach => ach.Id === AchievementID)
+                    if(!ach_) return
+                    ach_.CustomNotAchieved = true
+                    if(userCustomNotAchievedList[AchievementID] !== true){
+                        handleUserCustomNotAchievedList(ach_.Id, ach_.CustomNotAchieved)
+                    }
+                    isMultipleCustomNotAchievedList.push(AchievementID)                    
+                    
+                    // 自定义暂不可获得，判断当前状态，若状态为非未完成状态则进行修正
+                    if(ach_.Status !== 1){
+                        ach_.Status = 1
+                        handleUserAchievementList(ach_.Id, ach_.Status)
+                    }
+                })
+            }
+            else {
+                achievement.CustomNotAchieved = userAch_.status
+                // 自定义暂不可获得，判断当前状态，若状态为非未完成状态则进行修正
+                if(achievement.Status !== 1){
+                    achievement.Status = 1
+                    handleUserAchievementList(achievement.Id, achievement.Status)
+                }
+            }
+        })
+    }
+
+
     const dialogVisible = ref(false)
     const dialogAchievement = ref(null)
     const dialogMultipleChoiceList = computed(() =>{
@@ -500,10 +593,12 @@ export const useAchievementStore = defineStore('achievement', () => {
                 achievements.value.push(new Achievement(ach))
             })
 
-            getUserAchievement()            
+            getUserAchievement()  
+            getUserCustomNotAchieved()          
             initialMultipleChoice()
             initialAchievementsStatus()
             initialNotAvailable()
+            initialAchievementsCustomNotAchievedStatus()
 
             // achievements.value.sort((a, b) => {
             //     const achievementSecondClassA = achievementSecondClass[a.SecondClassId]
@@ -729,11 +824,11 @@ export const useAchievementStore = defineStore('achievement', () => {
             // 获取状态类成就筛选
             if(showAvailableType.value !== 'all') {
                 if(showAvailableType.value === 'available'){
-                    if(achievement.isNotAvailable)
+                    if(achievement.CustomNotAchieved || achievement.isNotAvailable)
                         return false
                 }
                 else if(showAvailableType.value === 'not-available'){
-                    if(!achievement.isNotAvailable)
+                    if(!achievement.CustomNotAchieved && !achievement.isNotAvailable)
                         return false
                 }
             }
@@ -819,6 +914,7 @@ export const useAchievementStore = defineStore('achievement', () => {
         // return true
          return showAchievements.value.every(achievement => {
             if (achievement?.MultipleID) return true
+            if (achievement.CustomNotAchieved) return true
             if (achievement.isNotAvailable) return true
             return achievement.Status !== 1
         })
@@ -827,6 +923,7 @@ export const useAchievementStore = defineStore('achievement', () => {
         if (selectAll.value) {
             showAchievements.value.forEach(achievement => {
                 if (achievement?.MultipleID) return
+                if (achievement.CustomNotAchieved) return
                 if (achievement.isNotAvailable) return
                 if (achievement.Status === 1) return
 
@@ -837,6 +934,7 @@ export const useAchievementStore = defineStore('achievement', () => {
         else{
             showAchievements.value.forEach(achievement => {
                 if (achievement?.MultipleID) return
+                if (achievement.CustomNotAchieved) return
                 if (achievement.isNotAvailable) return
                 if (achievement.Status === 3) return
 
@@ -892,6 +990,72 @@ export const useAchievementStore = defineStore('achievement', () => {
         }
     }
 
+    const AchievementToCustomNotAchieved = (achievement) => {
+        if (achievement.Status !== 1) {
+            achievement.Status = 1
+            handleUserAchievementList(achievement.Id, achievement.Status)
+        }
+
+        achievement.CustomNotAchieved = true
+        handleUserCustomNotAchievedList(achievement.Id, achievement.CustomNotAchieved)
+
+        if(achievement?.MultipleID){
+            multipleChoice[achievement.MultipleID].forEach(AchievementID => {
+                if(AchievementID !== achievement.Id){
+                    const ach_ = achievements.value.find(ach => ach.Id === AchievementID)
+                    if(ach_){
+                        if(ach_.Status !== 1){
+                            ach_.Status = 1
+                            handleUserAchievementList(ach_.Id, ach_.Status)
+                        }
+
+                        ach_.CustomNotAchieved = true
+                        handleUserCustomNotAchievedList(ach_.Id, ach_.CustomNotAchieved)
+                    } 
+                }
+            })
+        }
+    } 
+
+    const AchievementCancelCustomNotAchieved = (achievement) => {
+        if (achievement.Status !== 1) {
+            achievement.Status = 1
+            handleUserAchievementList(achievement.Id, achievement.Status)
+        }
+
+        achievement.CustomNotAchieved = false
+        handleUserCustomNotAchievedList(achievement.Id, achievement.CustomNotAchieved)
+
+        if(achievement?.MultipleID){
+            multipleChoice[achievement.MultipleID].forEach(AchievementID => {
+                if(AchievementID !== achievement.Id){
+                    const ach_ = achievements.value.find(ach => ach.Id === AchievementID)
+                    if(ach_){
+                        if(ach_.Status !== 1){
+                            ach_.Status = 1
+                            handleUserAchievementList(ach_.Id, ach_.Status)
+                        }
+
+                        ach_.CustomNotAchieved = false
+                        handleUserCustomNotAchievedList(ach_.Id, ach_.CustomNotAchieved)
+                    } 
+                }
+            })
+        }
+    }
+
+    const getMultipleIDAchievemnetTitles = (achievement) => {
+        if(achievement?.MultipleID){
+            return multipleChoice[achievement.MultipleID].map(AchievementID => {
+                const ach_ = achievements.value.find(ach => ach.Id === AchievementID)
+                if(ach_){
+                    return ach_.Name
+                }
+            })
+        }
+        else return [achievement.Name]
+    }
+
     return {  
         PolychromeImg, 
         CopperImg,
@@ -931,6 +1095,9 @@ export const useAchievementStore = defineStore('achievement', () => {
         handleSelectAll,
         findUserAchievementList,
         handleUserAchievementList,
-        getAchievementFilterConfig
+        getAchievementFilterConfig,
+        AchievementToCustomNotAchieved,
+        AchievementCancelCustomNotAchieved,
+        getMultipleIDAchievemnetTitles
     }
 })

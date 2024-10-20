@@ -193,7 +193,8 @@ export const useUserInfoStore = defineStore('userInfo', () => {
 
     //更新（删除）STORAGE_KEY_LIST 中不存在userInfo 的 tokenID 中的数据
     const USER_ACHIEVEMENT_KEY = "zzz-userAchievement"
-    const STORAGE_KEY_LIST = [USER_ACHIEVEMENT_KEY]
+    const USER_TEXTJOIN_KEY = "zzz-userTextjoin"
+    const STORAGE_KEY_LIST = [USER_ACHIEVEMENT_KEY, USER_TEXTJOIN_KEY]
 
     const updateKeyStorage = () => {
         for (const key of STORAGE_KEY_LIST) {

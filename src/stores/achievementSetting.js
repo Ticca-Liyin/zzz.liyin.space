@@ -1,7 +1,7 @@
 import {ref, watchEffect, computed } from 'vue'
 import { defineStore } from 'pinia'
 
-export const useSettingStore = defineStore('setting', () => {
+export const useSettingStore = defineStore('achievementSetting', () => {
     const ACHIEVEMENT_SELECT_ALL_SECOND_CONFIRMATION_KEY = 'zzz-achievement-select-all-second-confirmation'
 
     const achievementSelectAllSecondConfirmation = ref(JSON.parse(localStorage.getItem(ACHIEVEMENT_SELECT_ALL_SECOND_CONFIRMATION_KEY) ?? true))
