@@ -7,6 +7,24 @@ const { isMobile } = storeToRefs(isMobileStore)
 
 const updateLogInfo = [
     { 
+        version: '1.5.0', 
+        date: '2025-01-11', 
+        title: '新增1.5版本成就，新增1.5版本上半角色',
+        changes: '<ul style="padding-left: 10px;"><li>新增1.5版本成就</li><li>新增1.5版本上半角色</li></ul>' 
+    },
+    { 
+        version: '1.4.0', 
+        date: '2024-12-19', 
+        title: '新增1.4版本成就，新增1.4版本角色',
+        changes: '<ul style="padding-left: 10px;"><li>新增1.4版本成就</li><li>新增1.4版本角色</li></ul>' 
+    },
+    { 
+        version: '1.3.0', 
+        date: '2024-11-05', 
+        title: '新增1.3版本成就，新增1.3版本角色',
+        changes: '<ul style="padding-left: 10px;"><li>新增1.3版本成就</li><li>新增1.3版本角色</li></ul>' 
+    },
+    { 
         version: '1.2.1', 
         date: '2024-10-20', 
         title: '将“完美闪避”成就设置为暂不可获得成就，新增1.2版本角色，新增成就界面设置特殊文本内容功能，新增自定义暂不可获得成就功能，将设置界面中与成就相关的选项移动至成就界面的设置窗口中，修复导入成就功能存在的部分问题',

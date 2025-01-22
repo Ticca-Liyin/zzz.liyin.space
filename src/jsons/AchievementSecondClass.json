@@ -41,7 +41,7 @@
     "FirstClassId": 1,
     "Priority": 8
   },
-  "10079": {
+  "1009": {
     "Id": 1009,
     "Name": "绳网热议",
     "FirstClassId": 1,
@@ -49,7 +49,7 @@
   },
   "2001": {
     "Id": 2001,
-    "Name": "零号空洞",
+    "Name": "枯萎之都",
     "FirstClassId": 2,
     "Priority": 1
   },
@@ -57,19 +57,25 @@
     "Id": 2002,
     "Name": "作战技巧",
     "FirstClassId": 2,
-    "Priority": 2
+    "Priority": 3
   },
   "2003": {
     "Id": 2003,
     "Name": "敌对目标",
     "FirstClassId": 2,
-    "Priority": 3
+    "Priority": 4
   },
   "2004": {
     "Id": 2004,
     "Name": "战斗成就",
     "FirstClassId": 2,
-    "Priority": 4
+    "Priority": 5
+  },
+  "2005": {
+    "Id": 2005,
+    "Name": "迷失之地",
+    "FirstClassId": 2,
+    "Priority": 2
   },
   "3001": {
     "Id": 3001,
