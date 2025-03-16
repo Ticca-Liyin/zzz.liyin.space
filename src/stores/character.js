@@ -83,7 +83,7 @@ export const useCharacterStore = defineStore('character', () => {
             return characterDefaultAvatar
         }
 
-        return char.avatar
+        return 'https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin' + char.avatar
     }
 
     const getCharacterAvatarName = (charID) => {

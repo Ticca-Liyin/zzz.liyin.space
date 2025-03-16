@@ -51,7 +51,7 @@
     "Id": 2001,
     "Name": "枯萎之都",
     "FirstClassId": 2,
-    "Priority": 1
+    "Priority": 2
   },
   "2002": {
     "Id": 2002,
@@ -75,7 +75,7 @@
     "Id": 2005,
     "Name": "迷失之地",
     "FirstClassId": 2,
-    "Priority": 2
+    "Priority": 1
   },
   "3001": {
     "Id": 3001,
