@@ -418,5 +418,35 @@
     "warp": "limited",
     "version": 1.5,
     "faction": ["天琴座"]
+  },
+  "1029": {
+    "id": 1029,
+    "MiYoSheId": 1190,
+    "HoYoWikiId": 618,
+    "name": "零号·安比",
+    "shortName": "零号·安比",
+    "avatar": "/2025/03/11/919494a3711fe2eae1a74d8b8427ee5a_596255076640499455.png",
+    "specialty": "强攻",
+    "stats": "电",
+    "attackType": "斩击",
+    "rank": "S",
+    "warp": "limited",
+    "version": 1.6,
+    "faction": ["防卫军·白银小队"]
+  },
+  "1030": {
+    "id": 1030,
+    "MiYoSheId": 1191,
+    "HoYoWikiId": 619,
+    "name": "波可娜·费雷尼",
+    "shortName": "波可娜",
+    "avatar": "/2025/03/11/76d1e64c6ea76ffb7aabfd090c30dba0_3692781990695818269.png",
+    "specialty": "击破",
+    "stats": "火",
+    "attackType": "斩击",
+    "rank": "S",
+    "warp": "limited",
+    "version": 1.6,
+    "faction": ["卡吕冬之子"]
   }
 }

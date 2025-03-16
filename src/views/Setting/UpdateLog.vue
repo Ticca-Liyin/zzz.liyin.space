@@ -7,6 +7,12 @@ const { isMobile } = storeToRefs(isMobileStore)
 
 const updateLogInfo = [
     { 
+        version: '1.6.1', 
+        date: '2025-03-16', 
+        title: '新增1.6版本上半角色，修正“暂无迷失之虞”成就菲林数与游戏内数据不符的问题',
+        changes: '<ul style="padding-left: 10px;"><li>新增1.6版本上半角色</li><li>修正“暂无迷失之虞”成就菲林数与游戏内数据不符的问题</li></ul>' 
+    },
+    { 
         version: '1.6.0', 
         date: '2025-03-12', 
         title: '新增1.6版本成就，新增1.5版本下半角色',
