@@ -28,6 +28,9 @@ const malePattern = /\{M#([^\}]+)\}/g
 const femalePattern = /\{F#([^\}]+)\}/g
 
 export const useAchievementStore = defineStore('achievement', () => {
+    const specialPolychromeNum = {
+        2005009: 5
+    }
     class Achievement {
         constructor(achievement) {
             this.Id = achievement.Id
@@ -76,6 +79,7 @@ export const useAchievementStore = defineStore('achievement', () => {
         }
 
         get PolychromeNum(){
+            if (this.Id in specialPolychromeNum) return specialPolychromeNum[this.Id]
             if (this.Reward === 3) return 20
             if (this.Reward === 2) return 10
             if (this.Reward === 1) return 5
