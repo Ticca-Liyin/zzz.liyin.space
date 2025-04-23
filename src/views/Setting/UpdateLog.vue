@@ -7,6 +7,12 @@ const { isMobile } = storeToRefs(isMobileStore)
 
 const updateLogInfo = [
     { 
+        version: '1.7.0', 
+        date: '2025-04-23', 
+        title: '新增1.7版本成就，新增1.6版本下半角色',
+        changes: '<ul style="padding-left: 10px;"><li>新增1.7版本成就</li><li>新增1.6版本下半角色</li></ul>' 
+    },
+    { 
         version: '1.6.2', 
         date: '2025-03-19', 
         title: '修正“暂无迷失之虞”成就奖励类型错误问题',

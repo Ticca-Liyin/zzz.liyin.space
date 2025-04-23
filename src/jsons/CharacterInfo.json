@@ -442,11 +442,26 @@
     "shortName": "波可娜",
     "avatar": "/2025/03/11/76d1e64c6ea76ffb7aabfd090c30dba0_3692781990695818269.png",
     "specialty": "击破",
-    "stats": "火",
+    "stats": "物理",
     "attackType": "斩击",
     "rank": "S",
     "warp": "limited",
     "version": 1.6,
     "faction": ["卡吕冬之子"]
+  },
+  "1031": {
+    "id": 1031,
+    "MiYoSheId": 1230,
+    "HoYoWikiId": 619,
+    "name": "「扳机」",
+    "shortName": "扳机",
+    "avatar": "/2025/03/31/26f1e63602588117c4d0eaabb604d2c1_8323019581904676813.png",
+    "specialty": "击破",
+    "stats": "电",
+    "attackType": "穿透",
+    "rank": "S",
+    "warp": "limited",
+    "version": 1.7,
+    "faction": ["防卫军·奥波勒斯小队"]
   }
 }
