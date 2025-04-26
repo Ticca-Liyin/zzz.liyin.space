@@ -1,6 +1,6 @@
 {
-  "name": "starrail-tool2",
-  "version": "0.0.0",
+  "name": "zenless-zone-zero-tool",
+  "version": "0.3.0",
   "private": true,
   "scripts": {
     "dev": "vite",

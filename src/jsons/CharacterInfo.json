@@ -461,7 +461,22 @@
     "attackType": "穿透",
     "rank": "S",
     "warp": "limited",
-    "version": 1.7,
+    "version": 1.6,
     "faction": ["防卫军·奥波勒斯小队"]
+  },
+  "1032": {
+    "id": 1032,
+    "MiYoSheId": 1276,
+    "HoYoWikiId": 626,
+    "name": "薇薇安·班希",
+    "shortName": "薇薇安",
+    "avatar": "/2025/04/22/725b53a868786abab00f01ef9a174c88_7922982168600779570.png",
+    "specialty": "异常",
+    "stats": "以太",
+    "attackType": "斩击",
+    "rank": "S",
+    "warp": "limited",
+    "version": 1.7,
+    "faction": ["反舌鸟"]
   }
 }
