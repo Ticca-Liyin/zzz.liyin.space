@@ -1,7 +1,7 @@
 {
   "1001001": {
     "Id": 1001001,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "谐振和弦",
     "Desc": "解锁六分街的「吟游唱针」。",
     "Reward": 1,
@@ -10,7 +10,7 @@
   },
   "1001002": {
     "Id": 1001002,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "谐振共鸣",
     "Desc": "累计在「吟游唱针」调律10次。",
     "Reward": 1,
@@ -19,7 +19,7 @@
   },
   "1001003": {
     "Id": 1001003,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "嗯呢？！嗯嗯呢！",
     "Desc": "解锁六分街的「涡轮」改装店。",
     "Reward": 1,
@@ -28,7 +28,7 @@
   },
   "1001007": {
     "Id": 1001007,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "前方…是深渊啊！",
     "Desc": "解锁六分街的玩具店「盒」。",
     "Reward": 1,
@@ -37,7 +37,7 @@
   },
   "1001008": {
     "Id": 1001008,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "差一点就端盒了！",
     "Desc": "累计在玩具店「盒」购买5个音擎。",
     "Reward": 1,
@@ -46,47 +46,52 @@
   },
   "1001009": {
     "Id": 1001009,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "资深影迷",
     "Desc": "收集15盘录像带。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "1001010": {
     "Id": 1001010,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "大影评家",
     "Desc": "收集30盘录像带。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "1001011": {
     "Id": 1001011,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "合格的店长",
     "Desc": "在录像店帮助3位客人。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "1001012": {
     "Id": 1001012,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "回头客很重要",
     "Desc": "在录像店帮助6位客人。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "1001013": {
     "Id": 1001013,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "六分街五星店铺",
     "Desc": "在录像店帮助10位客人。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "1001014": {
     "Id": 1001014,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "请遵守劳动法！",
     "Desc": "在录像店内，让同一名宣传员连续上班7天。",
     "Reward": 1,
@@ -95,7 +100,7 @@
   },
   "1001015": {
     "Id": 1001015,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "来一场刺激的对决",
     "Desc": "解锁六分街的「金手指」电玩店。",
     "Reward": 1,
@@ -104,7 +109,7 @@
   },
   "1001016": {
     "Id": 1001016,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "自费鞭策自己",
     "Desc": "解锁六分街的「COFF CAFE」。",
     "Reward": 1,
@@ -113,7 +118,7 @@
   },
   "1001017": {
     "Id": 1001017,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "今宵无人入眠",
     "Desc": "在晚上或者凌晨，到「COFF CAFE」喝咖啡。",
     "Reward": 1,
@@ -122,7 +127,7 @@
   },
   "1001018": {
     "Id": 1001018,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "每日打卡的开始",
     "Desc": "解锁六分街的「嗷呜」报刊亭。",
     "Reward": 1,
@@ -131,7 +136,7 @@
   },
   "1001019": {
     "Id": 1001019,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "绝非偶然",
     "Desc": "从「嗷呜」报刊亭的刮刮卡中获得一次最大的幸运奖励。",
     "Reward": 1,
@@ -140,7 +145,7 @@
   },
   "1001020": {
     "Id": 1001020,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "就是这里薯片半价？",
     "Desc": "解锁六分街的「141」杂货店。",
     "Reward": 1,
@@ -149,7 +154,7 @@
   },
   "1001023": {
     "Id": 1001023,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "再来一碗！",
     "Desc": "解锁六分街的「瀑汤谷-锦鲤」拉面店。",
     "Reward": 1,
@@ -158,7 +163,7 @@
   },
   "1001025": {
     "Id": 1001025,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "拉面品鉴师",
     "Desc": "在新艾利都的「瀑汤谷-锦鲤」拉面店尝遍所有口味的拉面。",
     "Reward": 1,
@@ -203,7 +208,7 @@
   },
   "1001030": {
     "Id": 1001030,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "别挡住我的阳光",
     "Desc": "发现「桶之贤者」的秘密。",
     "Reward": 1,
@@ -212,7 +217,7 @@
   },
   "1001031": {
     "Id": 1001031,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "午夜悄悄话",
     "Desc": "在深夜时段，拨通六分街的公共电话。",
     "Reward": 1,
@@ -221,7 +226,7 @@
   },
   "1001032": {
     "Id": 1001032,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "人形猫薄荷",
     "Desc": "得到六分街上小猫们的「认可」。",
     "Reward": 1,
@@ -230,7 +235,7 @@
   },
   "1001033": {
     "Id": 1001033,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "六分街的影子领主",
     "Desc": "在六分街上见证小猫「曲奇」的不同姿态。",
     "Reward": 1,
@@ -239,7 +244,7 @@
   },
   "1001034": {
     "Id": 1001034,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "来都来了",
     "Desc": "在黑雁工地借用工地的卫生间。",
     "Reward": 1,
@@ -248,7 +253,7 @@
   },
   "1001035": {
     "Id": 1001035,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "谁是可疑人员",
     "Desc": "在深夜时段进入治安局办事处。",
     "Reward": 1,
@@ -257,7 +262,7 @@
   },
   "1001036": {
     "Id": 1001036,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "出门还要看运势吗？",
     "Desc": "在对代理人发出邀约后失约。",
     "Reward": 1,
@@ -266,7 +271,7 @@
   },
   "1001037": {
     "Id": 1001037,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "读读空气吧",
     "Desc": "在与代理人的对话中触发一次「信赖下降」。",
     "Reward": 1,
@@ -275,7 +280,7 @@
   },
   "1001038": {
     "Id": 1001038,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "小街生活",
     "Desc": "在六分街找到喵吉长官，并集齐第1页的全部奖章。",
     "Reward": 1,
@@ -284,7 +289,7 @@
   },
   "1001039": {
     "Id": 1001039,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "最熟悉的地方",
     "Desc": "在六分街找到喵吉长官，并集齐第2页的全部奖章。",
     "Reward": 1,
@@ -293,7 +298,7 @@
   },
   "1001040": {
     "Id": 1001040,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "编外工程师",
     "Desc": "在黑雁工地找到喵吉长官，并集齐第1页的全部奖章。",
     "Reward": 1,
@@ -302,7 +307,7 @@
   },
   "1001041": {
     "Id": 1001041,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "就是爱逛",
     "Desc": "在光映广场找到喵吉长官，并集齐第1页的全部奖章。",
     "Reward": 1,
@@ -311,7 +316,7 @@
   },
   "1001042": {
     "Id": 1001042,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "购物狂",
     "Desc": "在光映广场找到喵吉长官，并集齐第2页的全部奖章。",
     "Reward": 1,
@@ -320,7 +325,7 @@
   },
   "1001043": {
     "Id": 1001043,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "灵异爱好者",
     "Desc": "在芭莱大厦前找到喵吉长官，并集齐第1页的全部奖章。",
     "Reward": 1,
@@ -365,7 +370,7 @@
   },
   "1001048": {
     "Id": 1001048,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "丽都里的守望者",
     "Desc": "在光映广场找到喵吉长官，并集齐「再建丽都！」的全部奖章",
     "Reward": 1,
@@ -374,7 +379,7 @@
   },
   "1001049": {
     "Id": 1001049,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "该洗脸了",
     "Desc": "在报刊亭刮刮卡连续2天刮出「3根骨头」图案。",
     "Reward": 1,
@@ -383,7 +388,7 @@
   },
   "1001050": {
     "Id": 1001050,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "小狗只会原谅",
     "Desc": "深夜到访「嗷呜」报刊亭，打扰嗷呜的休息。",
     "Reward": 1,
@@ -392,7 +397,7 @@
   },
   "1001051": {
     "Id": 1001051,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "可乐罐拥堵事件",
     "Desc": "查看六分街上的自动售货机，并不礼貌地踢它一脚。",
     "Reward": 1,
@@ -401,7 +406,7 @@
   },
   "1001052": {
     "Id": 1001052,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "实在优雅",
     "Desc": "查看六分街上「姿态优雅」的邦布塑像。",
     "Reward": 1,
@@ -410,7 +415,7 @@
   },
   "1001053": {
     "Id": 1001053,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "愿大家都有一丁尼",
     "Desc": "在录像店门口找到前来兑现承诺的一丁尼布。",
     "Reward": 1,
@@ -419,7 +424,7 @@
   },
   "1001054": {
     "Id": 1001054,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "家庭省电新思路",
     "Desc": "拍摄光映广场停车场内邦布充电桩的「顾客」。",
     "Reward": 1,
@@ -428,7 +433,7 @@
   },
   "1001055": {
     "Id": 1001055,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "三思而后思",
     "Desc": "凑近观察芭莱大厦前广场上的「再好好想想」雕像，并给它拍照。",
     "Reward": 1,
@@ -437,7 +442,7 @@
   },
   "1001056": {
     "Id": 1001056,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "下次一定",
     "Desc": "阅读光映广场治安局办事处正门的「远离空洞」宣传海报。",
     "Reward": 1,
@@ -446,7 +451,7 @@
   },
   "1001057": {
     "Id": 1001057,
-    "SecondClassId": 1001,
+    "SecondClassId": 4004,
     "Name": "...无力野人？",
     "Desc": "在野火镇拍摄已经掉漆的「无边野火」路牌。",
     "Reward": 1,
@@ -455,7 +460,7 @@
   },
   "1001058": {
     "Id": 1001058,
-    "SecondClassId": 1001,
+    "SecondClassId": 4004,
     "Name": "无可挑剔",
     "Desc": "在「芝托邦」找到牙签仙人掌「盆栽」。",
     "Reward": 1,
@@ -464,7 +469,7 @@
   },
   "1001059": {
     "Id": 1001059,
-    "SecondClassId": 1001,
+    "SecondClassId": 4004,
     "Name": "您这是正经杂货店吗？",
     "Desc": "在深夜的野火镇找到「747」杂货摊位。",
     "Reward": 1,
@@ -473,7 +478,7 @@
   },
   "1001060": {
     "Id": 1001060,
-    "SecondClassId": 1001,
+    "SecondClassId": 4001,
     "Name": "少女神明的七日箱庭",
     "Desc": "通过［调整时段］功能，累计推移28个时段。",
     "Reward": 1,
@@ -482,7 +487,7 @@
   },
   "1001061": {
     "Id": 1001061,
-    "SecondClassId": 1001,
+    "SecondClassId": 4004,
     "Name": "荒野采风",
     "Desc": "在野火镇找到喵吉长官，并集齐全部奖章。",
     "Reward": 1,
@@ -491,7 +496,7 @@
   },
   "1001062": {
     "Id": 1001062,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "灵感贩售处",
     "Desc": "解锁光映广场的「3Z设计工作室」。",
     "Reward": 1,
@@ -500,7 +505,7 @@
   },
   "1001063": {
     "Id": 1001063,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "我全要了！",
     "Desc": "从「3Z设计工作室」兑换5件乙的作品。",
     "Reward": 1,
@@ -509,7 +514,7 @@
   },
   "1001064": {
     "Id": 1001064,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "连环失窃案·协理",
     "Desc": "在「丽都周纪」中，找回葵家的刀、海藤大叔的鱼线、尚先生的照片和多莉的滑轮装置。",
     "Reward": 1,
@@ -518,7 +523,7 @@
   },
   "1001065": {
     "Id": 1001065,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "连环失窃案·真相",
     "Desc": "在「丽都周纪」中，向邻居和朋友们了解更多「猫小偷」相关的信息。",
     "Reward": 1,
@@ -527,7 +532,7 @@
   },
   "1001066": {
     "Id": 1001066,
-    "SecondClassId": 1001,
+    "SecondClassId": 4004,
     "Name": "社会性死亡体验",
     "Desc": "在「芝托邦」餐厅，让墙角的土拨鼠发出大叫。",
     "Reward": 1,
@@ -536,7 +541,7 @@
   },
   "1001067": {
     "Id": 1001067,
-    "SecondClassId": 1001,
+    "SecondClassId": 4005,
     "Name": "非常关心",
     "Desc": "在对空六课的办公室，翻阅所有放在办公桌上的东西。",
     "Reward": 1,
@@ -545,7 +550,7 @@
   },
   "1001068": {
     "Id": 1001068,
-    "SecondClassId": 1001,
+    "SecondClassId": 4005,
     "Name": "「严禁拍摄」",
     "Desc": "在HAND大楼外的围墙边，拍摄「严禁拍摄」标志。",
     "Reward": 1,
@@ -554,7 +559,7 @@
   },
   "1001069": {
     "Id": 1001069,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "「禁止垂钓」",
     "Desc": "在厄匹斯港「禁止垂钓」的警示牌边上尝试垂钓。",
     "Reward": 1,
@@ -563,7 +568,7 @@
   },
   "1001070": {
     "Id": 1001070,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "「DO NOT ENTER」",
     "Desc": "在热望角尝试进入挂有「DO NOT ENTER」的入口。",
     "Reward": 1,
@@ -572,7 +577,7 @@
   },
   "1001071": {
     "Id": 1001071,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "没有什么能够阻挡",
     "Desc": "「勇敢」违规，与港口、热望角、HAND大楼前的3块标牌反向互动。",
     "Reward": 1,
@@ -581,7 +586,7 @@
   },
   "1001072": {
     "Id": 1001072,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "特别的音乐",
     "Desc": "在热望角的水吧听到录音。",
     "Reward": 1,
@@ -590,7 +595,7 @@
   },
   "1001073": {
     "Id": 1001073,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "今晚月…哦是阴天",
     "Desc": "在凌晨拍摄热望角上方的排气扇。",
     "Reward": 1,
@@ -599,7 +604,7 @@
   },
   "1001074": {
     "Id": 1001074,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "何日归港",
     "Desc": "在厄匹斯港找到储物柜的取件码，并尝试取件。",
     "Reward": 1,
@@ -608,7 +613,7 @@
   },
   "1001075": {
     "Id": 1001075,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "整点薯条！",
     "Desc": "在厄匹斯港找到叛逆的海鸥，尝试给它喂食薯条。",
     "Reward": 1,
@@ -617,7 +622,7 @@
   },
   "1001076": {
     "Id": 1001076,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "当你凝视空屋的时候",
     "Desc": "在厄匹斯港爬上灯塔边的楼房，尝试打开顶楼的窗。",
     "Reward": 1,
@@ -626,7 +631,7 @@
   },
   "1001077": {
     "Id": 1001077,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "不爱海鱼爱奖章",
     "Desc": "在厄匹斯港找到喵吉长官，并集齐全部奖章。",
     "Reward": 1,
@@ -635,7 +640,7 @@
   },
   "1001078": {
     "Id": 1001078,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "太好了噗噗！",
     "Desc": "成为喵吉长官信任的好市民。",
     "Reward": 2,
@@ -644,7 +649,7 @@
   },
   "1001079": {
     "Id": 1001079,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "执行官挚友",
     "Desc": "在「丽都周纪」中，帮泰西和琪琪解决烦心事。",
     "Reward": 1,
@@ -653,7 +658,7 @@
   },
   "1001080": {
     "Id": 1001080,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "被嘉音包围了！",
     "Desc": "在丽都各处，寻找并拍摄5张耀嘉音主演的影片、广告和演唱会的海报。",
     "Reward": 1,
@@ -662,7 +667,7 @@
   },
   "1001081": {
     "Id": 1001081,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "关于致富的尝试",
     "Desc": "在星环电视塔的VIP包厢中，「试坐」一下昂贵的沙发。",
     "Reward": 1,
@@ -671,7 +676,7 @@
   },
   "1001082": {
     "Id": 1001082,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "另一颗星星",
     "Desc": "在星环电视塔，「碰巧」听到一些关于莫妮卡女士的聊天。",
     "Reward": 1,
@@ -680,7 +685,7 @@
   },
   "1001083": {
     "Id": 1001083,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "眺望拂晓的天光",
     "Desc": "在星环电视塔，「碰巧」找到一些关于「妄想天使」的消息。",
     "Reward": 1,
@@ -689,7 +694,7 @@
   },
   "1001084": {
     "Id": 1001084,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "「设计如此」",
     "Desc": "在星环电视塔的流光大厅中，偶遇努力通关的专业设计师。",
     "Reward": 1,
@@ -698,7 +703,7 @@
   },
   "1001085": {
     "Id": 1001085,
-    "SecondClassId": 1001,
+    "SecondClassId": 4002,
     "Name": "旅鸟的归巢",
     "Desc": "在厄匹斯港的炬光灯塔上，观赏老唐的海鸥提灯。",
     "Reward": 1,
@@ -707,23 +712,25 @@
   },
   "1003001": {
     "Id": 1003001,
-    "SecondClassId": 1003,
+    "SecondClassId": 4001,
     "Name": "新城观览",
     "Desc": "累计登录7天。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "1003002": {
     "Id": 1003002,
-    "SecondClassId": 1003,
+    "SecondClassId": 4001,
     "Name": "「丽都见」",
     "Desc": "累计登录30天。",
     "Reward": 2,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "1003003": {
     "Id": 1003003,
-    "SecondClassId": 1003,
+    "SecondClassId": 4001,
     "Name": "城市的年轮",
     "Desc": "累计登录365天。",
     "Reward": 3,
@@ -732,183 +739,205 @@
   },
   "1003004": {
     "Id": 1003004,
-    "SecondClassId": 1003,
+    "SecondClassId": 4001,
     "Name": "升级没有捷径",
     "Desc": "绳网等级达到20级。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "1003005": {
     "Id": 1003005,
-    "SecondClassId": 1003,
+    "SecondClassId": 4001,
     "Name": "我，独自升级！",
     "Desc": "绳网等级达到40级。",
     "Reward": 2,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "1003006": {
     "Id": 1003006,
-    "SecondClassId": 1003,
+    "SecondClassId": 4001,
     "Name": "LV60，恭迎王的回归",
     "Desc": "绳网等级达到60级。",
     "Reward": 3,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "1003007": {
     "Id": 1003007,
-    "SecondClassId": 1003,
+    "SecondClassId": 4001,
     "Name": "来了？朋友！",
     "Desc": "任意代理人等级达到20级。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "1003008": {
     "Id": 1003008,
-    "SecondClassId": 1003,
+    "SecondClassId": 4001,
     "Name": "摸清门路了，朋友！",
     "Desc": "任意代理人等级达到30级。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "1003009": {
     "Id": 1003009,
-    "SecondClassId": 1003,
+    "SecondClassId": 4001,
     "Name": "对劲了，朋友！",
     "Desc": "任意代理人等级达到40级。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "1003010": {
     "Id": 1003010,
-    "SecondClassId": 1003,
+    "SecondClassId": 4001,
     "Name": "找到感觉了，朋友！",
     "Desc": "任意代理人等级达到50级。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "1003011": {
     "Id": 1003011,
-    "SecondClassId": 1003,
+    "SecondClassId": 4001,
     "Name": "武装到牙齿，朋友！",
     "Desc": "任意代理人等级达到60级。",
     "Reward": 2,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "1003012": {
     "Id": 1003012,
-    "SecondClassId": 1003,
+    "SecondClassId": 4001,
     "Name": "放心交给我，朋友！",
     "Desc": "3位代理人等级达到60级。",
     "Reward": 3,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "1003013": {
     "Id": 1003013,
-    "SecondClassId": 1003,
+    "SecondClassId": 4001,
     "Name": "我将偷偷变强",
     "Desc": "代理人技能强化5次。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "1003014": {
     "Id": 1003014,
-    "SecondClassId": 1003,
+    "SecondClassId": 4001,
     "Name": "更大，更多，更强！",
     "Desc": "代理人技能强化20次。",
     "Reward": 2,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "1003015": {
     "Id": 1003015,
-    "SecondClassId": 1003,
+    "SecondClassId": 4001,
     "Name": "强中强！",
     "Desc": "代理人技能强化100次。",
     "Reward": 3,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "1003016": {
     "Id": 1003016,
-    "SecondClassId": 1003,
+    "SecondClassId": 4001,
     "Name": "拼装达人",
     "Desc": "将任意音擎的等级提升至20级。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "1003017": {
     "Id": 1003017,
-    "SecondClassId": 1003,
+    "SecondClassId": 4001,
     "Name": "发烧友",
     "Desc": "将任意音擎的等级提升至40级。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "1003018": {
     "Id": 1003018,
-    "SecondClassId": 1003,
+    "SecondClassId": 4001,
     "Name": "只是沉迷拼装玩具",
     "Desc": "将任意音擎的等级提升至60级。",
     "Reward": 2,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "1003019": {
     "Id": 1003019,
-    "SecondClassId": 1003,
+    "SecondClassId": 4001,
     "Name": "价值连城的展示柜",
     "Desc": "将任意3个音擎的等级提升至60级。",
     "Reward": 3,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "1003020": {
     "Id": 1003020,
-    "SecondClassId": 1003,
+    "SecondClassId": 4001,
     "Name": "听到旋律了吗？",
     "Desc": "将任意驱动盘的等级提升至9级。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "1003021": {
     "Id": 1003021,
-    "SecondClassId": 1003,
+    "SecondClassId": 4001,
     "Name": "音乐即是斗志",
     "Desc": "将任意驱动盘的等级提升至12级。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "1003022": {
     "Id": 1003022,
-    "SecondClassId": 1003,
+    "SecondClassId": 4001,
     "Name": "有品位的歌单",
     "Desc": "将任意驱动盘的等级提升至15级。",
     "Reward": 2,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "1003023": {
     "Id": 1003023,
-    "SecondClassId": 1003,
+    "SecondClassId": 4001,
     "Name": "大合奏",
     "Desc": "将6个任意驱动盘的等级提升至15级。",
     "Reward": 3,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "1003025": {
     "Id": 1003025,
-    "SecondClassId": 1003,
+    "SecondClassId": 4001,
     "Name": "小钱而已，不值一提",
     "Desc": "累计获得100万丁尼。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "1003026": {
     "Id": 1003026,
-    "SecondClassId": 1003,
+    "SecondClassId": 4001,
     "Name": "我在新艾利都发大财",
     "Desc": "累计获得1000万丁尼。",
     "Reward": 2,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "1003027": {
     "Id": 1003027,
-    "SecondClassId": 1003,
+    "SecondClassId": 4001,
     "Name": "这么有钱真是抱歉啦",
     "Desc": "累计获得1亿丁尼。",
     "Reward": 3,
@@ -917,63 +946,70 @@
   },
   "1003028": {
     "Id": 1003028,
-    "SecondClassId": 1003,
+    "SecondClassId": 4001,
     "Name": "非典型外向绳匠",
     "Desc": "获得5位代理人。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "1003029": {
     "Id": 1003029,
-    "SecondClassId": 1003,
+    "SecondClassId": 4001,
     "Name": "开派对指日可待",
     "Desc": "获得15位代理人。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "1003030": {
     "Id": 1003030,
-    "SecondClassId": 1003,
+    "SecondClassId": 4001,
     "Name": "隐藏款指日可待",
     "Desc": "累计获得50个音擎。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "1003031": {
     "Id": 1003031,
-    "SecondClassId": 1003,
+    "SecondClassId": 4001,
     "Name": "嘘！别问价格",
     "Desc": "累计获得100个音擎。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "1003032": {
     "Id": 1003032,
-    "SecondClassId": 1003,
+    "SecondClassId": 4001,
     "Name": "迈入！邦布时代",
     "Desc": "获得1只邦布。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "1003033": {
     "Id": 1003033,
-    "SecondClassId": 1003,
+    "SecondClassId": 4001,
     "Name": "一只一只又一只",
     "Desc": "累计获得5只邦布。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "1003034": {
     "Id": 1003034,
-    "SecondClassId": 1003,
+    "SecondClassId": 4001,
     "Name": "邦布大统领！",
     "Desc": "累计获得10只邦布。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "1003037": {
     "Id": 1003037,
-    "SecondClassId": 1003,
+    "SecondClassId": 4001,
     "Name": "用光的艺术",
     "Desc": "累计拍摄3张照片。",
     "Reward": 1,
@@ -982,58 +1018,65 @@
   },
   "1003038": {
     "Id": 1003038,
-    "SecondClassId": 1003,
+    "SecondClassId": 4001,
     "Name": "个人形象管理",
     "Desc": "更换绳网头像。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.1"
   },
   "1003039": {
     "Id": 1003039,
-    "SecondClassId": 1003,
+    "SecondClassId": 4001,
     "Name": "「您好，我是…」",
     "Desc": "更换绳网名片。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.1"
   },
   "1003040": {
     "Id": 1003040,
-    "SecondClassId": 1003,
+    "SecondClassId": 4001,
     "Name": "由你陪伴我",
     "Desc": "更换快捷菜单界面的动态壁纸。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.1"
   },
   "1003041": {
     "Id": 1003041,
-    "SecondClassId": 1003,
+    "SecondClassId": 4001,
     "Name": "核心力量训练Ⅰ",
     "Desc": "代理人核心技强化5次。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.1"
   },
   "1003042": {
     "Id": 1003042,
-    "SecondClassId": 1003,
+    "SecondClassId": 4001,
     "Name": "核心力量训练Ⅱ",
     "Desc": "代理人核心技强化20次。",
     "Reward": 2,
+    "Hidden": 0,
     "Version": "1.1"
   },
   "1003043": {
     "Id": 1003043,
-    "SecondClassId": 1003,
+    "SecondClassId": 4001,
     "Name": "核心力量训练Ⅲ",
     "Desc": "代理人核心技强化50次。",
     "Reward": 3,
+    "Hidden": 0,
     "Version": "1.1"
   },
   "1003044": {
     "Id": 1003044,
-    "SecondClassId": 1003,
+    "SecondClassId": 4001,
     "Name": "不慎斩获过多荣誉",
     "Desc": "更换绳网称号。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.3"
   },
   "1004001": {
@@ -1213,6 +1256,7 @@
     "Name": "愿得三人心",
     "Desc": "累计3位代理人对绳匠的信赖达到4阶。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "1004022": {
@@ -1221,6 +1265,7 @@
     "Name": "我的朋友很多",
     "Desc": "累计10位代理人对绳匠的信赖达到4阶。",
     "Reward": 2,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "1004023": {
@@ -1229,6 +1274,7 @@
     "Name": "我，打团架的王",
     "Desc": "累计20位代理人对绳匠的信赖达到4阶。",
     "Reward": 3,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "1004024": {
@@ -1492,6 +1538,33 @@
     "Hidden": 1,
     "Version": "1.7"
   },
+  "1004053": {
+    "Id": 1004053,
+    "SecondClassId": 1004,
+    "Name": "猛虎刚下山",
+    "Desc": "橘福福对绳匠的信赖达到4阶。",
+    "Reward": 1,
+    "Hidden": 2,
+    "Version": "2.0"
+  },
+  "1004054": {
+    "Id": 1004054,
+    "SecondClassId": 1004,
+    "Name": "游云伴晦明",
+    "Desc": "仪玄对绳匠的信赖达到4阶。",
+    "Reward": 1,
+    "Hidden": 2,
+    "Version": "2.0"
+  },
+  "1004055": {
+    "Id": 1004055,
+    "SecondClassId": 1004,
+    "Name": "师兄给你开小灶",
+    "Desc": "潘引壶对绳匠的信赖达到4阶。",
+    "Reward": 1,
+    "Hidden": 2,
+    "Version": "2.0"
+  },
   "1005001": {
     "Id": 1005001,
     "SecondClassId": 1005,
@@ -1581,6 +1654,33 @@
     "Reward": 3,
     "Hidden": 1,
     "Version": "1.7"
+  },
+  "1005011": {
+    "Id": 1005011,
+    "SecondClassId": 1005,
+    "Name": "初入卫非地",
+    "Desc": "在「云霞同归处」中，与橘福福一起走遍[辉瓷集市]。",
+    "Reward": 1,
+    "Hidden": 1,
+    "Version": "2.0"
+  },
+  "1005012": {
+    "Id": 1005012,
+    "SecondClassId": 1005,
+    "Name": "卫非地急救大师",
+    "Desc": "在「云霞同归处」中，与仪玄一同拯救卫非地。",
+    "Reward": 1,
+    "Hidden": 1,
+    "Version": "2.0"
+  },
+  "1005013": {
+    "Id": 1005013,
+    "SecondClassId": 1005,
+    "Name": "今宵旧梦无缺",
+    "Desc": "和云岿山的众人一起，化解卫非地所面对的危机。",
+    "Reward": 3,
+    "Hidden": 1,
+    "Version": "2.0"
   },
   "1006001": {
     "Id": 1006001,
@@ -1698,6 +1798,15 @@
     "Reward": 2,
     "Hidden": 1,
     "Version": "1.6"
+  },
+  "1006014": {
+    "Id": 1006014,
+    "SecondClassId": 1006,
+    "Name": "虎胆侠气镇妖魔",
+    "Desc": "完成橘福福的代理人秘闻「《猛虎伏魔传！》」。",
+    "Reward": 2,
+    "Hidden": 1,
+    "Version": "2.0"
   },
   "1007001": {
     "Id": 1007001,
@@ -1951,6 +2060,42 @@
     "Hidden": 1,
     "Version": "1.7"
   },
+  "1008025": {
+    "Id": 1008025,
+    "SecondClassId": 1008,
+    "Name": "心有灵犀的邂逅",
+    "Desc": "在「缘于引力的邂逅」中，累计10位朋友的观影评级达到「引力知音」。",
+    "Reward": 1,
+    "Hidden": 2,
+    "Version": "2.0"
+  },
+  "1008026": {
+    "Id": 1008026,
+    "SecondClassId": 1008,
+    "Name": "还是专心观影吧…",
+    "Desc": "在「缘于引力的邂逅」中，1位朋友的观影评级达到「影映初契」。",
+    "Reward": 1,
+    "Hidden": 2,
+    "Version": "2.0"
+  },
+  "1008027": {
+    "Id": 1008027,
+    "SecondClassId": 1008,
+    "Name": "重要的不是看什么",
+    "Desc": "在「缘于引力的邂逅」中，与1位朋友共同观看其不喜欢的电影。",
+    "Reward": 1,
+    "Hidden": 1,
+    "Version": "2.0"
+  },
+  "1008028": {
+    "Id": 1008028,
+    "SecondClassId": 1008,
+    "Name": "私享影音盛宴",
+    "Desc": "在「缘于引力的邂逅」中，累计6个「光影私享」关卡的评级达到S+。",
+    "Reward": 1,
+    "Hidden": 2,
+    "Version": "2.0"
+  },
   "1009001": {
     "Id": 1009001,
     "SecondClassId": 1009,
@@ -2004,6 +2149,15 @@
     "Reward": 1,
     "Hidden": 1,
     "Version": "1.7"
+  },
+  "1009007": {
+    "Id": 1009007,
+    "SecondClassId": 1009,
+    "Name": "「计划有变」",
+    "Desc": "在绳网回复帖子「[灌水]家人们，谁知道怎么加入反舌鸟？」。",
+    "Reward": 1,
+    "Hidden": 1,
+    "Version": "2.0"
   },
   "2001001": {
     "Id": 2001001,
@@ -2578,6 +2732,7 @@
     "Name": "一招了之Ⅰ",
     "Desc": "单次对敌伤害超过100000点。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "2002002": {
@@ -2586,6 +2741,7 @@
     "Name": "一招了之Ⅱ",
     "Desc": "单次对敌伤害超过500000点。",
     "Reward": 2,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "2002003": {
@@ -2594,6 +2750,7 @@
     "Name": "一招了之Ⅲ",
     "Desc": "单次对敌伤害超过1000000点。",
     "Reward": 3,
+    "Hidden": 0,
     "Version": "1.1"
   },
   "2002009": {
@@ -2602,6 +2759,7 @@
     "Name": "毕生一击Ⅰ",
     "Desc": "代理人累计释放10次「终结技」。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "2002010": {
@@ -2610,6 +2768,7 @@
     "Name": "毕生一击Ⅱ",
     "Desc": "代理人累计释放50次「终结技」。",
     "Reward": 2,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "2002011": {
@@ -2618,6 +2777,7 @@
     "Name": "毕生一击Ⅲ",
     "Desc": "代理人累计释放200次「终结技」。",
     "Reward": 3,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "2002012": {
@@ -2626,6 +2786,7 @@
     "Name": "雪中送火Ⅰ",
     "Desc": "在战斗中，累计触发10次「极限支援」。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "2002013": {
@@ -2634,6 +2795,7 @@
     "Name": "雪中送火Ⅱ",
     "Desc": "在战斗中，累计触发50次「极限支援」。",
     "Reward": 2,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "2002014": {
@@ -2642,6 +2804,7 @@
     "Name": "雪中送火Ⅲ",
     "Desc": "在战斗中，累计触发200次「极限支援」。",
     "Reward": 3,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "2002015": {
@@ -2650,6 +2813,7 @@
     "Name": "刀背藏身Ⅰ",
     "Desc": "在战斗中，累计触发10次「极限闪避」。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "2002016": {
@@ -2658,6 +2822,7 @@
     "Name": "刀背藏身Ⅱ",
     "Desc": "在战斗中，累计触发50次「极限闪避」。",
     "Reward": 2,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "2002017": {
@@ -2666,6 +2831,7 @@
     "Name": "刀背藏身Ⅲ",
     "Desc": "在战斗中，累计触发200次「极限闪避」。",
     "Reward": 3,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "2002019": {
@@ -2674,14 +2840,16 @@
     "Name": "三下五除二",
     "Desc": "连续击晕3名不同的敌人，使小队内3名代理人轮流上场支援。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "2002020": {
     "Id": 2002020,
     "SecondClassId": 2002,
     "Name": "特写当然要帅气",
-    "Desc": "在战斗中，使用「终结技」击败最后的敌人。",
+    "Desc": "在H.D.D.系统中，使用「终结技」击败最后的敌人。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "2002023": {
@@ -2690,21 +2858,23 @@
     "Name": "咻咻咻！",
     "Desc": "在10秒内，触发3次「极限支援」。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "2002024": {
     "Id": 2002024,
     "SecondClassId": 2002,
     "Name": "存着存着就忘了",
-    "Desc": "在喧响值充满的状态下，完成战斗。",
+    "Desc": "在H.D.D.系统中，在喧响值充满的状态下完成1次战斗委托。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "2002026": {
     "Id": 2002026,
     "SecondClassId": 2002,
     "Name": "燃燃燃起来了！",
-    "Desc": "携带3位「火」属性代理人，完成30场战斗。",
+    "Desc": "在H.D.D.系统中，携带3位「火」属性代理人完成30次战斗委托。",
     "Reward": 1,
     "Hidden": 1,
     "Version": "1.0"
@@ -2713,7 +2883,7 @@
     "Id": 2002027,
     "SecondClassId": 2002,
     "Name": "如在冰箱内",
-    "Desc": "携带3位「冰」属性代理人，完成30场战斗。",
+    "Desc": "在H.D.D.系统中，携带3位「冰」属性代理人完成30次战斗委托。",
     "Reward": 1,
     "Hidden": 1,
     "Version": "1.0"
@@ -2722,7 +2892,7 @@
     "Id": 2002028,
     "SecondClassId": 2002,
     "Name": "酥酥麻麻的呢",
-    "Desc": "携带3位「电」属性代理人，完成30场战斗。",
+    "Desc": "在H.D.D.系统中，携带3位「电」属性代理人完成30次战斗委托。",
     "Reward": 1,
     "Hidden": 1,
     "Version": "1.0"
@@ -2731,7 +2901,7 @@
     "Id": 2002029,
     "SecondClassId": 2002,
     "Name": "遇事不决以太学",
-    "Desc": "携带3位「以太」属性代理人，完成30场战斗。",
+    "Desc": "在H.D.D.系统中，携带3位「以太」属性代理人完成30次战斗委托。",
     "Reward": 1,
     "Hidden": 1,
     "Version": "1.0"
@@ -2740,7 +2910,7 @@
     "Id": 2002030,
     "SecondClassId": 2002,
     "Name": "你相信力量吗？",
-    "Desc": "携带3位「物理」属性代理人，完成30场战斗。",
+    "Desc": "在H.D.D.系统中，携带3位「物理」属性代理人完成30次战斗委托。",
     "Reward": 1,
     "Hidden": 1,
     "Version": "1.0"
@@ -2751,6 +2921,7 @@
     "Name": "激情燃烧Ⅰ",
     "Desc": "累计10次，使用「火」属性代理人使敌人陷入属性异常。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "2002035": {
@@ -2759,6 +2930,7 @@
     "Name": "激情燃烧Ⅱ",
     "Desc": "累计50次，使用「火」属性代理人使敌人陷入属性异常。",
     "Reward": 2,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "2002036": {
@@ -2776,6 +2948,7 @@
     "Name": "请冷静Ⅰ",
     "Desc": "累计10次，使用「冰」属性代理人使敌人陷入属性异常。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "2002038": {
@@ -2784,6 +2957,7 @@
     "Name": "请冷静Ⅱ",
     "Desc": "累计50次，使用「冰」属性代理人使敌人陷入属性异常。",
     "Reward": 2,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "2002039": {
@@ -2801,6 +2975,7 @@
     "Name": "触电的感觉Ⅰ",
     "Desc": "累计10次，使用「电」属性代理人使敌人陷入属性异常。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "2002041": {
@@ -2809,6 +2984,7 @@
     "Name": "触电的感觉Ⅱ",
     "Desc": "累计50次，使用「电」属性代理人使敌人陷入属性异常。",
     "Reward": 2,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "2002042": {
@@ -2826,6 +3002,7 @@
     "Name": "以为太难Ⅰ",
     "Desc": "累计10次，使用「以太」属性代理人使敌人陷入属性异常。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "2002044": {
@@ -2834,6 +3011,7 @@
     "Name": "以为太难Ⅱ",
     "Desc": "累计50次，使用「以太」属性代理人使敌人陷入属性异常。",
     "Reward": 2,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "2002045": {
@@ -2851,6 +3029,7 @@
     "Name": "据理服人Ⅰ",
     "Desc": "累计10次，使用「物理」属性代理人使敌人陷入属性异常。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "2002047": {
@@ -2859,6 +3038,7 @@
     "Name": "据理服人Ⅱ",
     "Desc": "累计50次，使用「物理」属性代理人使敌人陷入属性异常。",
     "Reward": 2,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "2002048": {
@@ -2876,6 +3056,7 @@
     "Name": "露电幻梦Ⅰ",
     "Desc": "在战斗中，累计触发10次「紊乱」效果。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "2002050": {
@@ -2884,6 +3065,7 @@
     "Name": "露电幻梦Ⅱ",
     "Desc": "在战斗中，累计触发50次「紊乱」效果。",
     "Reward": 2,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "2002051": {
@@ -2892,6 +3074,7 @@
     "Name": "露电幻梦Ⅲ",
     "Desc": "在战斗中，累计触发200次「紊乱」效果。",
     "Reward": 3,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "2002052": {
@@ -2900,6 +3083,7 @@
     "Name": "小邦布大能量",
     "Desc": "作战中，出战邦布的单次伤害达到10000。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.4"
   },
   "2002053": {
@@ -2908,6 +3092,7 @@
     "Name": "家有格斗高手",
     "Desc": "作战中，出战邦布的单次伤害达到50000。",
     "Reward": 2,
+    "Hidden": 0,
     "Version": "1.4"
   },
   "2002054": {
@@ -2916,6 +3101,7 @@
     "Name": "迷你型战争机器",
     "Desc": "作战中，出战邦布的单次伤害达到100000。",
     "Reward": 3,
+    "Hidden": 0,
     "Version": "1.4"
   },
   "2003001": {
@@ -2949,7 +3135,7 @@
     "Id": 2003004,
     "SecondClassId": 2002,
     "Name": "最后的英雄",
-    "Desc": "在仅剩一名代理人在场的情况下，取得战斗胜利。",
+    "Desc": "在H.D.D.系统中，在仅剩一名代理人在场的情况下完成1次战斗委托。",
     "Reward": 1,
     "Hidden": 1,
     "Version": "1.0"
@@ -2980,6 +3166,15 @@
     "Reward": 1,
     "Hidden": 2,
     "Version": "1.4"
+  },
+  "2003008": {
+    "Id": 2003008,
+    "SecondClassId": 2003,
+    "Name": "斩断秽浊之源",
+    "Desc": "在[秽息司祭]开启[秽浊流界]之前，就将其击败。",
+    "Reward": 1,
+    "Hidden": 2,
+    "Version": "2.0"
   },
   "2004002": {
     "Id": 2004002,
@@ -3629,12 +3824,49 @@
     "Hidden": 1,
     "Version": "1.6"
   },
+  "2005027": {
+    "Id": 2005027,
+    "SecondClassId": 2005,
+    "Name": "副业凶险但实在值得",
+    "Desc": "在［以太活性 15］的难度下，通关「特遣调查」。",
+    "Reward": 3,
+    "Hidden": 2,
+    "Version": "2.0"
+  },
+  "2005028": {
+    "Id": 2005028,
+    "SecondClassId": 2005,
+    "Name": "熟练焊工",
+    "Desc": "在通关「特遣调查」的单局内，累计获得2个[射吸式焊炬]。",
+    "Reward": 1,
+    "Hidden": 1,
+    "Version": "2.0"
+  },
+  "2005029": {
+    "Id": 2005029,
+    "SecondClassId": 2005,
+    "Name": "惊险「见面会」",
+    "Desc": "在「特遣调查」中，使用特定代理人出战并偶遇她们的追随者。",
+    "Reward": 1,
+    "Hidden": 1,
+    "Version": "2.0"
+  },
+  "2005030": {
+    "Id": 2005030,
+    "SecondClassId": 2005,
+    "Name": "防卫军科研顾问",
+    "Desc": "在单局「特遣调查」中，为3名代理人解锁[战术棱镜方案]的分支方案。",
+    "Reward": 1,
+    "Hidden": 1,
+    "Version": "2.0"
+  },
   "3001000": {
     "Id": 3001000,
     "SecondClassId": 3001,
     "Name": "合理利用",
     "Desc": "在「终极无敌隐藏款」中，成功找到音擎。",
     "Reward": 1,
+    "Hidden": 0,
     "Version": "1.0"
   },
   "3001001": {
@@ -3978,5 +4210,464 @@
     "Reward": 1,
     "Hidden": 2,
     "Version": "1.4"
+  },
+  "3003001": {
+    "Id": 3003001,
+    "SecondClassId": 3003,
+    "Name": "新视界",
+    "Desc": "首次开启[觉感术]能力。",
+    "Reward": 1,
+    "Hidden": 1,
+    "Version": "2.0"
+  },
+  "3003002": {
+    "Id": 3003002,
+    "SecondClassId": 3003,
+    "Name": "「打一下试试」",
+    "Desc": "击败[渔人蟹]并获得意外奖励。",
+    "Reward": 1,
+    "Hidden": 1,
+    "Version": "2.0"
+  },
+  "3003003": {
+    "Id": 3003003,
+    "SecondClassId": 3003,
+    "Name": "门可以从这一侧打开",
+    "Desc": "从正确的方向打开单向机械制动门扉。",
+    "Reward": 1,
+    "Hidden": 1,
+    "Version": "2.0"
+  },
+  "3003004": {
+    "Id": 3003004,
+    "SecondClassId": 3003,
+    "Name": "另类解压法",
+    "Desc": "运用[觉感术]快速连击破坏多个[秽息瘿]。",
+    "Reward": 1,
+    "Hidden": 2,
+    "Version": "2.0"
+  },
+  "3003005": {
+    "Id": 3003005,
+    "SecondClassId": 3003,
+    "Name": "堂堂正正的对战",
+    "Desc": "成功关闭屏障发生器。",
+    "Reward": 1,
+    "Hidden": 2,
+    "Version": "2.0"
+  },
+  "3003006": {
+    "Id": 3003006,
+    "SecondClassId": 3003,
+    "Name": "拒绝返场演出",
+    "Desc": "与[阿卡沃尔]交锋，并在其复活后再次将其击败。",
+    "Reward": 1,
+    "Hidden": 1,
+    "Version": "2.0"
+  },
+  "3003007": {
+    "Id": 3003007,
+    "SecondClassId": 3003,
+    "Name": "拒绝山顶观演",
+    "Desc": "与[阿卡沃尔]交锋，并在其处于远程模式下时将其击败。",
+    "Reward": 1,
+    "Hidden": 1,
+    "Version": "2.0"
+  },
+  "3003008": {
+    "Id": 3003008,
+    "SecondClassId": 3003,
+    "Name": "日行一善",
+    "Desc": "成功解救科研院旧址内受困的TOPS调查员。",
+    "Reward": 1,
+    "Hidden": 1,
+    "Version": "2.0"
+  },
+  "3003009": {
+    "Id": 3003009,
+    "SecondClassId": 3003,
+    "Name": "吃到「蘑菇」！",
+    "Desc": "在[玛瑟尔档案]中，收集1个[欢庆之旗]。",
+    "Reward": 1,
+    "Hidden": 2,
+    "Version": "2.0"
+  },
+  "3003011": {
+    "Id": 3003011,
+    "SecondClassId": 3003,
+    "Name": "「水管工」大胜利！",
+    "Desc": "在[玛瑟尔档案]中，收集6个[欢庆之旗]。",
+    "Reward": 2,
+    "Hidden": 2,
+    "Version": "2.0"
+  },
+  "3003012": {
+    "Id": 3003012,
+    "SecondClassId": 3003,
+    "Name": "辉瓷的心脏",
+    "Desc": "在航天城中，完成[中央制造区]区域的全收集。",
+    "Reward": 1,
+    "Hidden": 2,
+    "Version": "2.0"
+  },
+  "3003013": {
+    "Id": 3003013,
+    "SecondClassId": 3003,
+    "Name": "停摆的时钟",
+    "Desc": "在航天城中，完成[职工社区旧址]区域的全收集。",
+    "Reward": 1,
+    "Hidden": 2,
+    "Version": "2.0"
+  },
+  "3003014": {
+    "Id": 3003014,
+    "SecondClassId": 3003,
+    "Name": "蒙尘的图纸",
+    "Desc": "在航天城中，完成[科研院旧址]区域的全收集。",
+    "Reward": 1,
+    "Hidden": 2,
+    "Version": "2.0"
+  },
+  "3003015": {
+    "Id": 3003015,
+    "SecondClassId": 3003,
+    "Name": "锈蚀的器械",
+    "Desc": "在航天城中，完成[粗加工中心]区域的全收集。",
+    "Reward": 1,
+    "Hidden": 2,
+    "Version": "2.0"
+  },
+  "3003016": {
+    "Id": 3003016,
+    "SecondClassId": 3003,
+    "Name": "沉默的磁带",
+    "Desc": "在航天城中，完成[轻松公寓]区域的全收集。",
+    "Reward": 1,
+    "Hidden": 2,
+    "Version": "2.0"
+  },
+  "3003017": {
+    "Id": 3003017,
+    "SecondClassId": 3003,
+    "Name": "封缄的眺望",
+    "Desc": "在航天城中，完成[航天科学站]区域的全收集。",
+    "Reward": 1,
+    "Hidden": 2,
+    "Version": "2.0"
+  },
+  "3003018": {
+    "Id": 3003018,
+    "SecondClassId": 3003,
+    "Name": "「曾想摘星辰」",
+    "Desc": "在航天城中，对所有区域的总探索进度达到100%。",
+    "Reward": 3,
+    "Hidden": 1,
+    "Version": "2.0"
+  },
+  "3003019": {
+    "Id": 3003019,
+    "SecondClassId": 3003,
+    "Name": "踏遍昔日回响",
+    "Desc": "在航天城中，找到12处承载「航天城记忆」的特殊物件，并进行调查。",
+    "Reward": 1,
+    "Hidden": 2,
+    "Version": "2.0"
+  },
+  "4001001": {
+    "Id": 4001001,
+    "SecondClassId": 4001,
+    "Name": "枯树生花时",
+    "Desc": "随便观的[复兴等级]达到35级。",
+    "Reward": 1,
+    "Hidden": 2,
+    "Version": "2.0"
+  },
+  "4001002": {
+    "Id": 4001002,
+    "SecondClassId": 4001,
+    "Name": "诚信经营致富计划",
+    "Desc": "在随便观中，生产2000件货品。",
+    "Reward": 1,
+    "Hidden": 2,
+    "Version": "2.0"
+  },
+  "4001003": {
+    "Id": 4001003,
+    "SecondClassId": 4001,
+    "Name": "积沙成塔致富计划",
+    "Desc": "在随便观中，通过[拾遗]获得1500枚云纹徽。",
+    "Reward": 1,
+    "Hidden": 2,
+    "Version": "2.0"
+  },
+  "4001004": {
+    "Id": 4001004,
+    "SecondClassId": 4001,
+    "Name": "随便观经营专家Ⅰ",
+    "Desc": "随便观的累计营业额达到4000枚云纹徽。",
+    "Reward": 1,
+    "Hidden": 2,
+    "Version": "2.0"
+  },
+  "4001005": {
+    "Id": 4001005,
+    "SecondClassId": 4001,
+    "Name": "随便观经营专家Ⅱ",
+    "Desc": "随便观的累计营业额达到30000枚云纹徽。",
+    "Reward": 2,
+    "Hidden": 2,
+    "Version": "2.0"
+  },
+  "4001006": {
+    "Id": 4001006,
+    "SecondClassId": 4001,
+    "Name": "随便观经营专家Ⅲ",
+    "Desc": "随便观的累计营业额达到400000枚云纹徽。",
+    "Reward": 3,
+    "Hidden": 2,
+    "Version": "2.0"
+  },
+  "4001007": {
+    "Id": 4001007,
+    "SecondClassId": 4001,
+    "Name": "流水线考察",
+    "Desc": "在随便观的[游历]中，所有制造区的Ⅰ、Ⅱ、Ⅲ页签的评分都达到100。",
+    "Reward": 1,
+    "Hidden": 2,
+    "Version": "2.0"
+  },
+  "4001008": {
+    "Id": 4001008,
+    "SecondClassId": 4001,
+    "Name": "旧社区调研",
+    "Desc": "在随便观的[游历]中，所有社区旧址的Ⅰ、Ⅱ、Ⅲ页签的评分都达到100。",
+    "Reward": 1,
+    "Hidden": 2,
+    "Version": "2.0"
+  },
+  "4001009": {
+    "Id": 4001009,
+    "SecondClassId": 4001,
+    "Name": "研究院重游",
+    "Desc": "在随便观的[游历]中，所有研究院旧址的Ⅰ、Ⅱ、Ⅲ页签的评分都达到100。",
+    "Reward": 1,
+    "Hidden": 2,
+    "Version": "2.0"
+  },
+  "4001010": {
+    "Id": 4001010,
+    "SecondClassId": 4001,
+    "Name": "得力助手·迷你版",
+    "Desc": "为复兴随便观，从「邦巢」招募1只S级邦布。",
+    "Reward": 1,
+    "Hidden": 2,
+    "Version": "2.0"
+  },
+  "4001011": {
+    "Id": 4001011,
+    "SecondClassId": 4001,
+    "Name": "迷你助手·进阶版",
+    "Desc": "为复兴随便观，将1只邦布提升至30级。",
+    "Reward": 1,
+    "Hidden": 2,
+    "Version": "2.0"
+  },
+  "4001012": {
+    "Id": 4001012,
+    "SecondClassId": 4001,
+    "Name": "新业务成立中",
+    "Desc": "在「饮茶仙」，完成5次订单提交。",
+    "Reward": 1,
+    "Hidden": 2,
+    "Version": "2.0"
+  },
+  "4001013": {
+    "Id": 4001013,
+    "SecondClassId": 4001,
+    "Name": "金融业的第一步",
+    "Desc": "在「德丰大押」，消耗2500枚「百通宝」。",
+    "Reward": 1,
+    "Hidden": 2,
+    "Version": "2.0"
+  },
+  "4001014": {
+    "Id": 4001014,
+    "SecondClassId": 4001,
+    "Name": "专业探索团队",
+    "Desc": "在随便观的[游历]中，所有[深处] 的区域评分都达到100。",
+    "Reward": 1,
+    "Hidden": 2,
+    "Version": "2.0"
+  },
+  "4002001": {
+    "Id": 4002001,
+    "SecondClassId": 4002,
+    "Name": "「纪实向影片」",
+    "Desc": "在引力电影院，和电影《下班神话》的宣传板合影。",
+    "Reward": 1,
+    "Hidden": 1,
+    "Version": "2.0"
+  },
+  "4003005": {
+    "Id": 4003005,
+    "SecondClassId": 4003,
+    "Name": "应算尽算",
+    "Desc": "在「问机算卜」中，收集「卦象集录」中的全部卦象。",
+    "Reward": 3,
+    "Hidden": 2,
+    "Version": "2.0"
+  },
+  "4003006": {
+    "Id": 4003006,
+    "SecondClassId": 4003,
+    "Name": "复兴第一步！",
+    "Desc": "与狮耶达成「复兴随便观」的共识。",
+    "Reward": 1,
+    "Hidden": 1,
+    "Version": "2.0"
+  },
+  "4003007": {
+    "Id": 4003007,
+    "SecondClassId": 4003,
+    "Name": "邦布的旅途",
+    "Desc": "派遣邦布[摆布]完成一次「游历」。",
+    "Reward": 1,
+    "Hidden": 1,
+    "Version": "2.0"
+  },
+  "4003008": {
+    "Id": 4003008,
+    "SecondClassId": 4003,
+    "Name": "「得闲饮茶！」",
+    "Desc": "解锁澄辉坪的「饮茶仙」。",
+    "Reward": 1,
+    "Hidden": 1,
+    "Version": "2.0"
+  },
+  "4003009": {
+    "Id": 4003009,
+    "SecondClassId": 4003,
+    "Name": "三点几嘞，饮茶先嘞",
+    "Desc": "在下午时段，光顾[饮茶仙]。",
+    "Reward": 1,
+    "Hidden": 1,
+    "Version": "2.0"
+  },
+  "4003010": {
+    "Id": 4003010,
+    "SecondClassId": 4003,
+    "Name": "「物美价廉！」",
+    "Desc": "解锁澄辉坪的「好物铺」。",
+    "Reward": 1,
+    "Hidden": 1,
+    "Version": "2.0"
+  },
+  "4003011": {
+    "Id": 4003011,
+    "SecondClassId": 4003,
+    "Name": "「童叟无欺！」",
+    "Desc": "解锁澄辉坪的「德丰大押」。",
+    "Reward": 1,
+    "Hidden": 1,
+    "Version": "2.0"
+  },
+  "4003012": {
+    "Id": 4003012,
+    "SecondClassId": 4003,
+    "Name": "「邦布代班！」",
+    "Desc": "解锁澄辉坪的「邦巢」。",
+    "Reward": 1,
+    "Hidden": 1,
+    "Version": "2.0"
+  },
+  "4003013": {
+    "Id": 4003013,
+    "SecondClassId": 4003,
+    "Name": "「凉茶下火！」",
+    "Desc": "到「平心堂」找壳哩布买凉茶。",
+    "Reward": 1,
+    "Hidden": 1,
+    "Version": "2.0"
+  },
+  "4003014": {
+    "Id": 4003014,
+    "SecondClassId": 4003,
+    "Name": "另辟蹊径的激励计划",
+    "Desc": "发现关于「辉瓷布」的真相。",
+    "Reward": 1,
+    "Hidden": 1,
+    "Version": "2.0"
+  },
+  "4003015": {
+    "Id": 4003015,
+    "SecondClassId": 4003,
+    "Name": "飞往思念的地方",
+    "Desc": "成功复兴随便观，重新举办伏汐会。",
+    "Reward": 1,
+    "Hidden": 1,
+    "Version": "2.0"
+  },
+  "4003016": {
+    "Id": 4003016,
+    "SecondClassId": 4003,
+    "Name": "最终解释权归谁所有",
+    "Desc": "在随便观的门前，听到关于奇怪雕塑设计意图的讨论。",
+    "Reward": 1,
+    "Hidden": 1,
+    "Version": "2.0"
+  },
+  "4003017": {
+    "Id": 4003017,
+    "SecondClassId": 4003,
+    "Name": "咪咪？木头咪咪！",
+    "Desc": "在「不掩」的橱窗外，偶遇和根雕造型相似的小猫。",
+    "Reward": 1,
+    "Hidden": 1,
+    "Version": "2.0"
+  },
+  "4003022": {
+    "Id": 4003022,
+    "SecondClassId": 4003,
+    "Name": "「上次不算，再来！」",
+    "Desc": "在澄辉坪，听到正林和「白衣女子」多次交手未果的故事。",
+    "Reward": 1,
+    "Hidden": 1,
+    "Version": "2.0"
+  },
+  "4003023": {
+    "Id": 4003023,
+    "SecondClassId": 4003,
+    "Name": "卫非地平凡故事",
+    "Desc": "在澄辉坪，听到春实和秋华努力打工的故事。",
+    "Reward": 1,
+    "Hidden": 1,
+    "Version": "2.0"
+  },
+  "4003024": {
+    "Id": 4003024,
+    "SecondClassId": 4003,
+    "Name": "故人就错过",
+    "Desc": "在澄辉坪，听到青云和沧海寻找彼此却遗憾错过的故事。",
+    "Reward": 1,
+    "Hidden": 1,
+    "Version": "2.0"
+  },
+  "4003025": {
+    "Id": 4003025,
+    "SecondClassId": 4003,
+    "Name": "",
+    "Desc": "",
+    "Reward": 1,
+    "Hidden": 1,
+    "Version": "2.0"
+  },
+  "4003026": {
+    "Id": 4003026,
+    "SecondClassId": 4003,
+    "Name": "",
+    "Desc": "",
+    "Reward": 1,
+    "Hidden": 1,
+    "Version": "2.0"
   }
 }

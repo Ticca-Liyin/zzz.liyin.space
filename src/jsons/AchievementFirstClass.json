@@ -1,14 +1,22 @@
 {
   "1": {
     "Id": 1,
-    "Name": "生活"
+    "Name": "故事",
+    "Priority": 1
   },
   "2": {
     "Id": 2,
-    "Name": "战术"
+    "Name": "战术",
+    "Priority": 3
   },
   "3": {
     "Id": 3,
-    "Name": "探索"
+    "Name": "探索",
+    "Priority": 4
+  },
+  "4": {
+    "Id": 4,
+    "Name": "城市",
+    "Priority": 2
   }
 }

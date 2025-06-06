@@ -7,6 +7,12 @@ const { isMobile } = storeToRefs(isMobileStore)
 
 const updateLogInfo = [
     { 
+        version: '2.0.0', 
+        date: '2025-06-06', 
+        title: '新增2.0版本成就',
+        changes: '<ul style="padding-left: 10px;"><li>新增2.0版本成就</li></ul>' 
+    },
+    { 
         version: '1.7.1', 
         date: '2025-04-26', 
         title: '新增1.7版本上半角色',
