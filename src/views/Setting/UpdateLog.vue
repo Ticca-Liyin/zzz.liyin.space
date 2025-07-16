@@ -9,8 +9,8 @@ const updateLogInfo = [
     {
         version: '2.1.2', 
         date: '2025-07-17', 
-        title: '成就攻略界面新增其他攻略跳转引导',
-        changes: '<ul><li>成就攻略界面新增其他攻略跳转引导：包括米游社及bilibili</li></ul>' 
+        title: '成就攻略界面新增其他攻略跳转引导，新增隐藏完成成就系列功能',
+        changes: '<ul><li>成就攻略界面新增其他攻略跳转引导：包括米游社及bilibili</li><li>新增隐藏完成成就系列功能<br>可在成就界面设置中进行设置<br>用于控制隐藏所有成就已完成的系列</li></ul>' 
     },
     { 
         version: '2.1.1', 

@@ -40,10 +40,33 @@ export const useSettingStore = defineStore('achievementSetting', () => {
         localStorage.setItem(ACHIEVEMENT_FILTER_CACHE_CONFIG_KEY, JSON.stringify(achievementFilterCacheConfig.value))
     })
 
+    //#region  隐藏完成成就系列
+    const HIDDEN_COMPLETE_ACHIEVEMENT_SERIES = 'hidden-complete-achievement-series'
+
+    const hiddenCompleteAchievementSeries = ref(JSON.parse(localStorage.getItem(HIDDEN_COMPLETE_ACHIEVEMENT_SERIES) ?? false))
+
+    const hiddenCompleteAchievementSeriesList = [
+        {
+            label: '显示',
+            value: false
+        },
+        {
+            label: '隐藏',
+            value: true
+        }
+    ]
+
+    watchEffect(() => {
+        localStorage.setItem(HIDDEN_COMPLETE_ACHIEVEMENT_SERIES, JSON.stringify(hiddenCompleteAchievementSeries.value))
+    })
+    //#endregion
+
     return {
         achievementSelectAllSecondConfirmation,
         secondConfirmationList,
         achievementFilterCacheConfig,
-        filterCacheConfigList
+        filterCacheConfigList,
+        hiddenCompleteAchievementSeries,
+        hiddenCompleteAchievementSeriesList
     }
 })
