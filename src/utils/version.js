@@ -1,4 +1,4 @@
-export const achievementInfoVersion = '2.1.1'
+export const achievementInfoVersion = '2.1.4'
 
 export const achievementFirstClassVersion = '2.0.0'
 
