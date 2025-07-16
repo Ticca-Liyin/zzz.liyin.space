@@ -4,7 +4,7 @@ import { defineStore } from 'pinia'
 export const useUpdateLogStore = defineStore('updateLog', () => {
     const updateLogInfo = [
         {
-            version: '2.1.2 ', 
+            version: '2.1.2', 
             date: '2025-07-17', 
             title: '新增更新日志弹窗，成就攻略界面新增其他攻略跳转引导，新增本页成就悬浮窗口隐藏功能，新增隐藏完成成就系列功能，新增显示分支类型的成就筛选功能',
             changes: '<ul><li>新增更新日志弹窗</li><li>成就攻略界面新增其他攻略跳转引导：包括米游社及bilibili</li><li>新增本页成就悬浮窗口隐藏功能</li><li>新增隐藏完成成就系列功能<br>可在成就界面设置中进行设置<br>用于控制隐藏所有成就已完成的系列</li><li>新增显示分支类型的成就筛选功能</li></ul>' 
