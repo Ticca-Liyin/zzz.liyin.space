@@ -751,6 +751,24 @@ export const useAchievementStore = defineStore('achievement', () => {
             label: '未完成'
         }
     ]
+    
+    //显示分支类成就筛选
+    const showBranchType = ref('all')
+    const selectBranchList = [
+        {
+            value: 'all',
+            label: '全部'
+        },
+        {
+            value: 'single',
+            label: '普通'
+        },
+        {
+            value: 'multiple',
+            label: '多选一'
+        }
+    ]
+
     //获取状态类成就筛选
     const showAvailableType = ref('all')
     const selectAvailableList = [
@@ -767,6 +785,11 @@ export const useAchievementStore = defineStore('achievement', () => {
             label: '暂不可获取'
         }
     ]
+
+    // 是否启用筛选功能
+    const hadFilter = computed(() => {
+        return showHiddenType.value !== 'all' || showRewardType.value !== 'all' || showCompletedType.value !== 'all' || showBranchType.value !== 'all' || showAvailableType.value !== 'all'
+    })
 
     //未完成优先
     const incompletePriority = ref(false)
@@ -819,6 +842,18 @@ export const useAchievementStore = defineStore('achievement', () => {
                 }
             }
 
+            // 分支类成就筛选
+            if(showBranchType.value !== 'all') {
+                if(showBranchType.value === 'single'){
+                    if(achievement.MultipleID)
+                        return false
+                }
+                else if(showBranchType.value === 'multiple'){
+                    if(!achievement.MultipleID)
+                        return false
+                }
+            }
+            
             // 获取状态类成就筛选
             if(showAvailableType.value !== 'all') {
                 if(showAvailableType.value === 'available'){
@@ -880,6 +915,7 @@ export const useAchievementStore = defineStore('achievement', () => {
             showHiddenType.value = data?.showHiddenType ?? "all"
             showRewardType.value = data?.showRewardType ?? "all"
             showCompletedType.value = data?.showCompletedType ?? "all"
+            showBranchType.value = data?.showBranchType ?? "all"
             showAvailableType.value = data?.showAvailableType ?? "all"
             incompletePriority.value = data?.incompletePriority ?? false
         } else {
@@ -887,6 +923,7 @@ export const useAchievementStore = defineStore('achievement', () => {
             showHiddenType.value = "all"
             showRewardType.value = "all"
             showCompletedType.value = "all"
+            showBranchType.value = "all"
             showAvailableType.value = "all"
             incompletePriority.value = false
         }
@@ -900,12 +937,13 @@ export const useAchievementStore = defineStore('achievement', () => {
             showHiddenType: showHiddenType.value,
             showRewardType: showRewardType.value,
             showCompletedType: showCompletedType.value,
+            showBranchType: showBranchType.value,
             showAvailableType: showAvailableType.value,
             incompletePriority: incompletePriority.value
         }))
     }
 
-    watch([showHiddenType, showRewardType, showCompletedType, showAvailableType, incompletePriority, achievementFilterCacheConfig], saveAchievementFilterConfig)
+    watch([showHiddenType, showRewardType, showCompletedType, showBranchType, showAvailableType, incompletePriority, achievementFilterCacheConfig], saveAchievementFilterConfig)
 
     //全选本页
     const selectAll = computed(() => {
@@ -1080,8 +1118,11 @@ export const useAchievementStore = defineStore('achievement', () => {
         selectRewardList,
         showCompletedType,
         selectCompletedList,
+        showBranchType,
+        selectBranchList,
         showAvailableType,
         selectAvailableList,
+        hadFilter,
         incompletePriority,
         selectAll,
         saveUserAchievement,

@@ -8,8 +8,8 @@ import { ref, onMounted, watch } from 'vue';
 import { storeToRefs } from 'pinia';
 
 const achievementStore = useAchievementStore();
-const { showHiddenType, showRewardType, showCompletedType, showAvailableType } = storeToRefs(achievementStore);
-const { selectHiddenList, selectRewardList, selectCompletedList, selectAvailableList } = achievementStore
+const { showHiddenType, showRewardType, showCompletedType, showBranchType, showAvailableType, hadFilter } = storeToRefs(achievementStore);
+const { selectHiddenList, selectRewardList, selectCompletedList, selectBranchList, selectAvailableList } = achievementStore
 
 const isMobileStore = useIsMobileStore()
 const { isMobile } = storeToRefs(isMobileStore)
@@ -126,7 +126,7 @@ const hadFilterClicked = ref(false)
             <div class="achievement-filter-left">
                 <el-popover placement="bottom-start" width="fit-content" trigger="click" popper-style="padding: 5px 12px;" @show="hadFilterClicked = true" @hide="hadFilterClicked = false">
                     <template #reference>
-                        <el-icon class="achievement-filter-icon" :class="{'clicked': hadFilterClicked}">
+                        <el-icon class="achievement-filter-icon" :class="{'clicked': hadFilterClicked, 'filtered': hadFilter}">
                             <Filter />
                         </el-icon>
                     </template>
@@ -138,6 +138,10 @@ const hadFilterClicked = ref(false)
                     <div class="achievement-filter-segmented">
                         <div>显示隐藏类型：</div>
                         <el-segmented v-model="showHiddenType" :options="selectHiddenList" black :size="isMobile ? 'small' : 'default'" :style="`font-size: ${isMobile ? 13 : 14}px;`"></el-segmented>
+                    </div>
+                    <div class="achievement-filter-segmented">
+                        <div>显示分支类型：</div>
+                        <el-segmented v-model="showBranchType" :options="selectBranchList" black :size="isMobile ? 'small' : 'default'" :style="`font-size: ${isMobile ? 13 : 14}px;`"></el-segmented>
                     </div>
                     <div class="achievement-filter-segmented">
                         <div>显示完成类型：</div>
@@ -180,7 +184,7 @@ const hadFilterClicked = ref(false)
                     <el-checkbox v-model="achievementStore.incompletePriority" label="未完成成就优先" :size= 'isMobile ? "default" : "large"' />   
                 </div>
                 <div class="achievement-filter-checkbox-input" :class="{'achievement-filter-flex': !hadFold}">
-                    <el-checkbox v-model="achievementStore.selectAll" :label="[].includes(achievementStore.showSecondClassId) ? '全选本页(多选一成就除外)' : '全选本页'" :size= 'isMobile ? "default" : "large"'  @click="confirmSelectAll"/>
+                    <el-checkbox v-model="achievementStore.selectAll" :label="[1005, 1009].includes(achievementStore.showSecondClassId) ? '全选本页(多选一成就除外)' : '全选本页'" :size= 'isMobile ? "default" : "large"'  @click="confirmSelectAll"/>
                     <div style="flex:1 0 0"></div>
                     <div class="achievement-filter-fold-up" v-if="!hadFold" @click="hadFold = true">
                         <el-icon class="el-icon--right">
@@ -261,6 +265,9 @@ const hadFilterClicked = ref(false)
 .achievement-filter-icon:hover{
     border: 1px solid var(--el-border-color-hover);
 }
+.achievement-filter-icon.filtered{
+    color: var(--el-color-primary);
+}
 .achievement-filter-icon.clicked{
     border: 1px solid var(--el-color-primary);
     color: var(--el-color-primary);
@@ -306,7 +313,7 @@ const hadFilterClicked = ref(false)
     color: var(--liyin-arrow-color);
     margin-right: 4px;
 }
-@media (max-width: 830px){
+@media (max-width: 930px){
     .achievement-filter-fold{
         padding: 14px 0 7px 0;
     }
