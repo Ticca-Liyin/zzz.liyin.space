@@ -17,18 +17,18 @@ const themeStore = useThemeStore()
 const { isDark } = storeToRefs(themeStore)
 
 const statsList = ["以太", "火", "冰", "物理", "电"]
-const specialtiesList = ["强攻", "击破", "异常", "支援", "防护"]
+const specialtiesList = ["强攻", "击破", "异常", "支援", "防护", "命破"]
 
 const characterList = computed(() => {
     const result = []
 
     // 外层循环控制行数
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < statsList.length; i++) {
         // 创建一个空数组用于存储每一行的元素
         result[i] = [];
         
         // 内层循环控制列数
-        for (let j = 0; j < 5; j++) {
+        for (let j = 0; j < specialtiesList.length; j++) {
             // 在每一行中添加元素
             result[i][j] = []
         }
@@ -38,7 +38,6 @@ const characterList = computed(() => {
     showCharacters.value.forEach(character => {
         const row = statsList.indexOf(character.stats); 
         const col = specialtiesList.indexOf(character.specialty);
-        
         result[row][col].push(character);
     });
 

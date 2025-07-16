@@ -28,6 +28,11 @@ export const useCharacterStore = defineStore('character', () => {
             ID: 5,
             name: "防护",
             avatar: "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/05/07/ba974570d0627f78131b5c09ffb630f2_1224778078231447651.png"
+        },
+        "命破": {
+            ID: 6,
+            name: "命破",
+            avatar: "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2025/05/26/c0757d3edb6fe9a706a2d0431def51e6_8085324341880460509.png"
         }
     }
 

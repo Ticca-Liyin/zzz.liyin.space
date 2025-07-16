@@ -2,6 +2,7 @@
 import { useAchievementStore } from '@/stores/achievement';
 import { useAuthorStore } from '@/stores/author';
 import { storeToRefs } from 'pinia';
+import { TopRight } from '@element-plus/icons-vue';
 import formatTimestamp from './formatTimestamp';
 
 const achievementStore = useAchievementStore()
@@ -88,6 +89,10 @@ const { authors } = storeToRefs(authorStore)
                 </el-scrollbar>
                 <div v-else class="dialog-body-stratery-concent">
                     <div>暂无相关攻略</div>
+                    <a class="achievement-strategy-search" target="_blank" :href="`https://www.miyoushe.com/zzz/search?keyword=${dialogAchievement.Name}`">
+                        <TopRight class="achievement-search-icon" />
+                        <span>搜索</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -212,6 +217,21 @@ a.dialog-body-stratery-href:hover{
 .dialog-footer div{
     word-wrap: break-word;
 }
+.achievement-search-icon {
+    width: 18px;
+    height: 18px;
+}
+.achievement-strategy-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px 0 10px;
+    font-size: 13px;
+    color: var(--liyin-ach-introduction-color);
+    line-height: 20px;
+    height: 20px;
+    cursor: pointer;
+}
 @media (max-width: 768px){
     .dialog-achievement{
         width:70%;
@@ -250,6 +270,10 @@ a.dialog-body-stratery-href:hover{
     }
     .dialog-footer {
         font-size: 10px;
+    }
+    .achievement-search-icon {
+        width: 15px;
+        height: 15px;
     }
 }
 
