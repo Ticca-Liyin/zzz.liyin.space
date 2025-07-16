@@ -1,5 +1,6 @@
 <script setup>
 import { ArrowDown } from '@element-plus/icons-vue'
+import UpdateLogDialog from '@/views/UpdateLog/index.vue'
 import { useUserInfoStore } from '@/stores/userInfo'
 import { useAuthorStore } from '@/stores/author'
 import { useCharacterStore } from '@/stores/character'
@@ -116,6 +117,8 @@ onMounted(() => {
     <main class="ly-main">
         <RouterView />
     </main>
+    
+    <UpdateLogDialog />
 </template>
 
 <style>
