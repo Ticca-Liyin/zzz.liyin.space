@@ -14,4 +14,4 @@ export const strategyInfoVersion = '1.0.0'
 
 export const authorInfoVersion = '1.0.0'
 
-export const characterInfoVersion = '1.7.1'
+export const characterInfoVersion = '2.1.3'

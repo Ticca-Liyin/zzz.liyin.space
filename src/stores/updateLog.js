@@ -4,6 +4,12 @@ import { defineStore } from 'pinia'
 export const useUpdateLogStore = defineStore('updateLog', () => {
     const updateLogInfo = [
         {
+            version: '2.1.3', 
+            date: '2025-07-17', 
+            title: '新增1.7、2.0、2.1版本角色',
+            changes: '<ul><li>新增1.7、2.0、2.1版本角色</li></ul>' 
+        },
+        {
             version: '2.1.2', 
             date: '2025-07-17', 
             title: '新增更新日志弹窗，成就攻略界面新增其他攻略跳转引导，新增本页成就悬浮窗口隐藏功能，新增隐藏完成成就系列功能，新增显示分支类型的成就筛选功能',
