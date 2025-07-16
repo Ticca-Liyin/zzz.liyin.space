@@ -56,8 +56,6 @@ export const useAchievementStore = defineStore('achievement', () => {
         }
 
         get Desc(){
-            return this.SrcDesc
-
             let result = this.SrcDesc
 
             result = result.replace(malePattern, (match, title) => {
