@@ -520,7 +520,7 @@
     "stats": "物理",
     "attackType": "打击",
     "rank": "A",
-    "warp": "limited",
+    "warp": "not-limited",
     "version": 2.0,
     "faction": ["云岿山"]
   },
@@ -586,7 +586,7 @@
   },
   "1040": {
     "id": 1040,
-    "MiYoSheId": 1501   ,
+    "MiYoSheId": 1501,
     "HoYoWikiId": 902,
     "name": "奥菲丝·马格努森",
     "shortName": "奥菲丝",
@@ -598,5 +598,50 @@
     "warp": "limited",
     "version": 2.2,
     "faction": ["防卫军·奥波勒斯小队"]
+  },
+  "1041": {
+    "id": 1041,
+    "MiYoSheId": 1533,
+    "HoYoWikiId": 907,
+    "name": "卢西娅",
+    "shortName": "卢西娅",
+    "avatar": "/2025/08/25/186855736/8fdf223cf2bf3d02ffe6675738ec0853_2635696047949335888.png",
+    "specialty": "支援",
+    "stats": "以太",
+    "attackType": "打击",
+    "rank": "S",
+    "warp": "limited",
+    "version": 2.3,
+    "faction": ["怪啖屋"]
+  },
+  "1042": {
+    "id": 1042,
+    "MiYoSheId": 1538,
+    "HoYoWikiId": 909,
+    "name": "伊德海莉",
+    "shortName": "伊德海莉",
+    "avatar": "/2025/08/29/186855736/6e12b5f5f69717b69173aaeb3991cc27_6437399660908189310.png",
+    "specialty": "命破",
+    "stats": "冰",
+    "attackType": "打击",
+    "rank": "S",
+    "warp": "limited",
+    "version": 2.3,
+    "faction": ["怪啖屋"]
+  },
+  "1043": {
+    "id": 1043,
+    "MiYoSheId": 1536,
+    "HoYoWikiId": 908,
+    "name": "狛野真斗",
+    "shortName": "真斗",
+    "avatar": "/2025/08/25/186855736/4a5806a43ea0eeeaab0379a9f66cc3fe_868333633627102712.png",
+    "specialty": "命破",
+    "stats": "火",
+    "attackType": "斩击",
+    "rank": "A",
+    "warp": "not-limited",
+    "version": 2.3,
+    "faction": ["怪啖屋"]
   }
 }
