@@ -62,6 +62,21 @@ export const useCharacterStore = defineStore('character', () => {
             name: "电",
             avatar: "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/05/07/23f0846bd60219d09ab419b831ce2de7_2106359761671844521.png"
         },
+        "烈霜": {
+            ID: 6,
+            name: "烈霜",
+            avatar: "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/12/16/0f1f7248fb12dcc6dcd53bd5317de36a_1299839726293114756.png"
+        },
+        "玄墨": {
+            ID: 7,
+            name: "玄墨",
+            avatar: "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2025/05/28/6f078ae60e8befb6c81a1940b2d2f23e_7885190983294402190.png"
+        },
+        "凛刃": {
+            ID: 8,
+            name: "电",
+            avatar: "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2025/12/19/829a5c02fb05e9e2b62fa85948ce2622_6316062390428861082.png"
+        },
     }
     
     const characters = ref({})

@@ -7,7 +7,7 @@ import { computed, ref } from 'vue';
 import { storeToRefs } from 'pinia';
 
 const characterStore = useCharacterStore()
-const { getStatsAvatar, getSpecialtyAvatar } = characterStore
+const { getStatsAvatar, getSpecialtyAvatar, stats, specialties } = characterStore
 
 const characterSettingStore = useCharacterSettingStore()
 const { scale, useWheelEvent, showCharacters } = storeToRefs(characterSettingStore)
@@ -16,8 +16,8 @@ const { scaleBaseIncrement, scaleMin, scaleMax} = characterSettingStore
 const themeStore = useThemeStore()
 const { isDark } = storeToRefs(themeStore)
 
-const statsList = ["以太", "火", "冰", "物理", "电"]
-const specialtiesList = ["强攻", "击破", "异常", "支援", "防护", "命破"]
+const statsList = Object.keys(stats)
+const specialtiesList = Object.keys(specialties)
 
 const characterList = computed(() => {
     const result = []
