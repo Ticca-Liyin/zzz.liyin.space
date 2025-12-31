@@ -8,6 +8,11 @@ import { useIsMobileStore } from '@/stores/isMobile'
 const achievementStore = useAchievementStore();
 const { achievementFirstClasses, showFirstClassId, showSecondClassId } = storeToRefs(achievementStore)
 
+// 按 Priority 排序展示第一分类
+const showFirstClasses = computed(() => {
+  return Object.values(achievementFirstClasses.value).sort((a, b) => a.Priority - b.Priority)
+})
+
 const isMobileStore = useIsMobileStore()
 const { isMobile } = storeToRefs(isMobileStore)
 
@@ -26,7 +31,7 @@ const props = defineProps({
         </el-icon>
       </div>
     </template>
-    <RouterLink v-for="firstClass in achievementFirstClasses" :key="firstClass.Id" 
+    <RouterLink v-for="firstClass in showFirstClasses" :key="firstClass.Id" 
     :to="`/achievement/${firstClass.Id}/${showSecondClassId}`" v-preventDragStart="true">
       <div class="achievement-first-class-select-name" :class="{'selected': showFirstClassId === firstClass.Id}">{{ firstClass.Name }}</div>
     </RouterLink>

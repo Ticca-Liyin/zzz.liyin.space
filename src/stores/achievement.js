@@ -578,7 +578,7 @@ export const useAchievementStore = defineStore('achievement', () => {
         .then(([achievementInfo, achievementFirstClass, achievementSecondClass, multiplechoice, notavailable, achievementsteategy, strategyinfo]) => {
             achievements.value = []
 
-            achievementFirstClass[0] = { Id: 0, Name: '全部' }
+            achievementFirstClass[0] = { Id: 0, Name: '全部', Priority: 0 }
             achievementFirstClasses.value = achievementFirstClass
 
             achievementSecondClasses.value = []
@@ -632,8 +632,8 @@ export const useAchievementStore = defineStore('achievement', () => {
             })
 
             achievementSecondClasses.value.sort((a, b) => {
-                const FirstClassPriorityA = a.FirstClassId
-                const FirstClassPriorityB = b.FirstClassId
+                const FirstClassPriorityA = achievementFirstClass[a.FirstClassId].Priority
+                const FirstClassPriorityB = achievementFirstClass[b.FirstClassId].Priority
                 if (FirstClassPriorityA !== FirstClassPriorityB) 
                     return FirstClassPriorityA - FirstClassPriorityB
 
