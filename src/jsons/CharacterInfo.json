@@ -703,5 +703,35 @@
     "warp": "limited",
     "version": 2.5,
     "faction": ["坎卜斯黑枝"]
+  },
+  "1048": {
+    "id": 1048,
+    "MiYoSheId": 1791,
+    "HoYoWikiId": 995,
+    "name": "千夏",
+    "shortName": "千夏",
+    "avatar": "/2026/01/13/98205622/fca35fd54bd8fe6704d24f46edb11f4c_3507776238507449727.png",
+    "specialty": "支援",
+    "stats": "物理",
+    "attackType": "打击",
+    "rank": "S",
+    "warp": "limited",
+    "version": 2.6,
+    "faction": ["妄想天使"]
+  },
+  "1049": {
+    "id": 1049,
+    "MiYoSheId": 1793,
+    "HoYoWikiId": 998,
+    "name": "爱芮",
+    "shortName": "爱芮",
+    "avatar": "/2026/01/13/98205622/0cbe8be1e94acd93a0acd7e17ccaa463_741850845848203820.png",
+    "specialty": "异常",
+    "stats": "以太",
+    "attackType": "打击",
+    "rank": "S",
+    "warp": "limited",
+    "version": 2.6,
+    "faction": ["妄想天使"]
   }
 }
