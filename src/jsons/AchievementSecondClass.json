@@ -112,5 +112,11 @@
     "Name": "索恩区",
     "FirstClassId": 4,
     "Priority": 5
+  },
+  "4006": {
+    "Id": 4006,
+    "Name": "布亚斯特",
+    "FirstClassId": 4,
+    "Priority": 6
   }
 }
