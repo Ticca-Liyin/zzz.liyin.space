@@ -598,24 +598,24 @@ export const useAchievementStore = defineStore('achievement', () => {
             initialNotAvailable()
             initialAchievementsCustomNotAchievedStatus()
 
-            // achievements.value.sort((a, b) => {
-            //     const achievementSecondClassA = achievementSecondClass[a.SecondClassId]
-            //     const achievementSecondClassB = achievementSecondClass[b.SecondClassId]
+            achievements.value.sort((a, b) => {
+                const achievementSecondClassA = achievementSecondClass[a.SecondClassId]
+                const achievementSecondClassB = achievementSecondClass[b.SecondClassId]
 
-            //     const FirstClassPriorityA = achievementSecondClassA.FirstClassId
-            //     const FirstClassPriorityB = achievementSecondClassB.FirstClassId
+                const FirstClassPriorityA = achievementFirstClass[achievementSecondClassA.FirstClassId].Priority
+                const FirstClassPriorityB = achievementFirstClass[achievementSecondClassB.FirstClassId].Priority
 
-            //     if (FirstClassPriorityA !== FirstClassPriorityB) 
-            //         return FirstClassPriorityA - FirstClassPriorityB 
+                if (FirstClassPriorityA !== FirstClassPriorityB) 
+                    return FirstClassPriorityA - FirstClassPriorityB 
 
-            //     const SecondClassPriorityA = achievementSecondClassA.Priority
-            //     const SecondClassPriorityB = achievementSecondClassB.Priority
+                const SecondClassPriorityA = achievementSecondClassA.Priority
+                const SecondClassPriorityB = achievementSecondClassB.Priority
 
-            //     if (SecondClassPriorityA !== SecondClassPriorityB) 
-            //         return SecondClassPriorityA - SecondClassPriorityB 
+                if (SecondClassPriorityA !== SecondClassPriorityB) 
+                    return SecondClassPriorityA - SecondClassPriorityB 
 
-            //     return a.Priority - b.Priority 
-            // })
+                return a.Priority - b.Priority 
+            })
 
             achievementSecondClasses.value.push(new AchievementAllSecondClass({
                 Id: 0,
