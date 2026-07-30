@@ -39,29 +39,35 @@
     "Id": 2001,
     "Name": "枯萎之都",
     "FirstClassId": 2,
-    "Priority": 2
+    "Priority": 6
   },
   "2002": {
     "Id": 2002,
     "Name": "作战技巧",
     "FirstClassId": 2,
-    "Priority": 3
+    "Priority": 2
   },
   "2003": {
     "Id": 2003,
     "Name": "敌对目标",
     "FirstClassId": 2,
-    "Priority": 4
+    "Priority": 3
   },
   "2004": {
     "Id": 2004,
     "Name": "战斗成就",
     "FirstClassId": 2,
-    "Priority": 5
+    "Priority": 4
   },
   "2005": {
     "Id": 2005,
     "Name": "迷失之地",
+    "FirstClassId": 2,
+    "Priority": 5
+  },
+  "2006": {
+    "Id": 2006,
+    "Name": "迷宫诡域",
     "FirstClassId": 2,
     "Priority": 1
   },
