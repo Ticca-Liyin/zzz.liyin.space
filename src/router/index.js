@@ -24,10 +24,15 @@ const router = createRouter({
               if(!firstClassId || !Number.isInteger(Number(firstClassId))){
                 firstClassId = 0
                 changeFirstClassId = true
+              } else {
+                firstClassId = Number(firstClassId)
               }
+              // 缺省二级 = 当前一级 ALL（Id === firstClassId）
               if(!secondClassId || !Number.isInteger(Number(secondClassId))){
-                secondClassId = 0
+                secondClassId = firstClassId
                 changeSecondClassId = true
+              } else {
+                secondClassId = Number(secondClassId)
               }
               // 如果参数缺失，重定向到默认值
               if (changeFirstClassId || changeSecondClassId) {

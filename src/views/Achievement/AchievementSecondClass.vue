@@ -4,9 +4,10 @@ import AchievementReward from './AchievementReward.vue';
 import { ArrowDown, ArrowUp } from '@element-plus/icons-vue';
 import { onMounted, ref, watch, computed } from 'vue';
 import { storeToRefs } from 'pinia';
-import { useAchievementStore } from '@/stores/achievement';
+import { useAchievementStore } from '@/stores/achievement/achievement';
+import { useAchievementShowSeriesStore } from '@/stores/achievement/achievementShowSeries'
 import { useThemeStore } from '@/stores/theme'
-import { useSettingStore } from '@/stores/achievementSetting.js'
+import { useAchievementSettingStore } from '@/stores/achievement/setting/achievementSetting.js'
 import { useRoute, onBeforeRouteUpdate } from 'vue-router';
 
 const route = useRoute();
@@ -25,17 +26,21 @@ const handleScroll = (event) => {
 }
 
 const achievementStore = useAchievementStore();
-const { showFirstClassId, showSecondClassId } = storeToRefs(achievementStore)
+const { PolychromeImg } = achievementStore
+
+const achievementShowSeriesStore = useAchievementShowSeriesStore()
+const { showFirstClassId, showSecondClassId, showAchievementSecondClasseses } = storeToRefs(achievementShowSeriesStore)
+const { changeShowSecondClassID } = achievementShowSeriesStore
 
 const themeStore = useThemeStore()
 const { isDark } = storeToRefs(themeStore)
 
-const settingStore = useSettingStore()
+const settingStore = useAchievementSettingStore()
 const { hiddenCompleteAchievementSeries } = storeToRefs(settingStore)
 
-onMounted(() => achievementStore.changeShowSecondClassID(route.params.firstClassId, route.params.secondClassId))
+onMounted(() => changeShowSecondClassID(route.params.firstClassId, route.params.secondClassId))
 
-onBeforeRouteUpdate((to) => achievementStore.changeShowSecondClassID(to.params.firstClassId, to.params.secondClassId))
+onBeforeRouteUpdate((to) => changeShowSecondClassID(to.params.firstClassId, to.params.secondClassId))
 
 // 设置行相关折叠功能
 const hadFold = ref(false)
@@ -102,7 +107,7 @@ const endSeriesDrag = () => {
 
         <div class="achievement-series" id="achievement-series" @wheel="handleScroll" >
             <!-- @mousedown="startSeriesDrag" @mousemove="handleSeriesDrag" @mouseup="endSeriesDrag" @mouseleave="endSeriesDrag" -->
-             <template v-for="(secondClass, index) in achievementStore.showAchievementSecondClasseses" :key="secondClass.Id">
+             <template v-for="(secondClass, index) in showAchievementSecondClasseses" :key="secondClass.Id">
                 <div v-if="!hiddenCompleteAchievementSeries || (secondClass.completedAchievementsLength !== secondClass.AchievementsLength + secondClass.notAvailableAchievementsLength || index === 0)" class="series-navigation"  :class="{'series-fold': hadFold}">
                     <RouterLink v-if="secondClass.AchievementsLength + secondClass.notAvailableAchievementsLength !== 0"
                     :to="`/achievement/${showFirstClassId}/${secondClass.Id}`" :class="{'selected': showSecondClassId === secondClass.Id}" v-preventDragStart="true">
@@ -119,7 +124,7 @@ const endSeriesDrag = () => {
                                     </div>
                                     <div class="series-Polychrome" v-if="!hadFold">
                                         {{secondClass.completedPolychromeTotal}} / {{secondClass.PolychromeTotal}}
-                                        <img :src="achievementStore.PolychromeImg" alt="菲林">
+                                        <img :src="PolychromeImg" alt="菲林">
                                     </div>
                                 </div>
                             </template>

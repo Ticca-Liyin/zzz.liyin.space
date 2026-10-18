@@ -11,18 +11,20 @@ import ImportAchievement from '@/components/import/importAchievement/index.vue';
 import { DynamicScroller, DynamicScrollerItem } from 'vue-virtual-scroller'
 import 'vue-virtual-scroller/dist/vue-virtual-scroller.css'
 import { onMounted } from 'vue';
-import { useAchievementStore } from '@/stores/achievement';
-import { useTextjoinStore } from '@/stores/textjoin.js'
+import { storeToRefs } from 'pinia'
+import { useAchievementStore } from '@/stores/achievement/achievement';
+import { useShowAchievementsStore } from '@/stores/achievement/showAchievements';
 
 const achievementStore = useAchievementStore()
-const textjoinStore = useTextjoinStore();
+const { initialAchievementsInfo } = achievementStore
+
+const showAchievementsStore = useShowAchievementsStore();
+const { showAchievements } = storeToRefs(showAchievementsStore);
 
 const AchievementSettingRef = ref(null)
 
 onMounted(() => {
-    textjoinStore.getUserTextjoin()
-    achievementStore.initialAchievementsInfo() 
-    achievementStore.getAchievementFilterConfig()
+    initialAchievementsInfo()
 })
 
 </script>
@@ -42,7 +44,7 @@ onMounted(() => {
         <AchievementSeries/>
 
         <DynamicScroller
-            :items="achievementStore.showAchievements"
+            :items="showAchievements"
             :min-item-size="60"
             :keyField="'Id'"
             class="scroller"

@@ -1,5 +1,5 @@
 <script setup>
-import { useAchievementStore } from '@/stores/achievement';
+import { useAchievementStore } from '@/stores/achievement/achievement';
 
 const achievementStore = useAchievementStore()
 const { GoldImg, SilverImg, CopperImg } = achievementStore;

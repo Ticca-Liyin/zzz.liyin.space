@@ -1,20 +1,29 @@
 <script setup>
 import { ArrowDown, ArrowUp, Filter } from '@element-plus/icons-vue'
 import { ElMessageBox } from 'element-plus'
-import { useAchievementStore } from '@/stores/achievement';
+import { useAchievementSelectAllStore } from '@/stores/achievement/achievementSelectAll';
+import { useShowAchievementsStore } from '@/stores/achievement/showAchievements'
+import { useAchievementFelterStore } from '@/stores/achievement/felter/achievementFelter';
 import { useIsMobileStore } from '@/stores/isMobile'
-import { useSettingStore } from '@/stores/achievementSetting'
+import { useAchievementSettingStore } from '@/stores/achievement/setting/achievementSetting'
 import { ref, onMounted, watch } from 'vue';
 import { storeToRefs } from 'pinia';
 
-const achievementStore = useAchievementStore();
-const { showHiddenType, showRewardType, showCompletedType, showBranchType, showAvailableType, hadFilter } = storeToRefs(achievementStore);
-const { selectHiddenList, selectRewardList, selectCompletedList, selectBranchList, selectAvailableList } = achievementStore
+const achievementSelectAllStore = useAchievementSelectAllStore();
+const { selectAll } = storeToRefs(achievementSelectAllStore);
+const { handleSelectAll } = achievementSelectAllStore;
+
+const showAchievementsStore = useShowAchievementsStore()
+const { pageHasMultipleChoice } = storeToRefs(showAchievementsStore)
+
+const achievementFelterStore = useAchievementFelterStore();
+const { showHiddenType, showRewardType, showCompletedType, showBranchType, showAvailableType, showVersionList, selectVersionList, hadFilter, searchContent, incompletePriority, } = storeToRefs(achievementFelterStore);
+const { selectHiddenList, selectRewardList, selectCompletedList, selectBranchList, selectAvailableList } = achievementFelterStore
 
 const isMobileStore = useIsMobileStore()
 const { isMobile } = storeToRefs(isMobileStore)
 
-const settingStore = useSettingStore()
+const settingStore = useAchievementSettingStore()
 const { achievementSelectAllSecondConfirmation } = storeToRefs(settingStore)
 
 const confirmSelectAll = (event) => {
@@ -23,7 +32,7 @@ const confirmSelectAll = (event) => {
     event.stopPropagation();
 
     if(achievementSelectAllSecondConfirmation.value) {
-        const operation = achievementStore.selectAll ? '取消全选' : '全选';
+        const operation = selectAll.value ? '取消全选' : '全选';
 
         ElMessageBox.confirm(
             `确认进行 <strong>${operation}</strong> 本页成就?`,
@@ -35,7 +44,7 @@ const confirmSelectAll = (event) => {
             }
         )
         .then(() => {
-            achievementStore.handleSelectAll();
+            handleSelectAll();
         })
         .catch(() => {
 
@@ -43,7 +52,7 @@ const confirmSelectAll = (event) => {
     }
 
     else {
-        achievementStore.handleSelectAll();
+        handleSelectAll();
     }
 }
 
@@ -154,7 +163,7 @@ const hadFilterClicked = ref(false)
                 </el-popover>
                 <div class="achievement-filter-search-input" :class="{'achievement-filter-flex': !hadFold}">
                     <el-input
-                        v-model="achievementStore.searchContent"
+                        v-model="searchContent"
                         class="achievement-filter-search-el-input"
                         size= "default"
                         placeholder="搜索成就名称、成就描述"
@@ -162,7 +171,7 @@ const hadFilterClicked = ref(false)
                 </div>
                 <div class="achievement-filter-select-input" :class="{'achievement-filter-flex achievement-filter-version': !hadFold}">
                     <el-select
-                    v-model="achievementStore.showVersionList"
+                    v-model="showVersionList"
                     multiple
                     collapse-tags
                     collapse-tags-tooltip
@@ -171,7 +180,7 @@ const hadFilterClicked = ref(false)
                     size= "default"
                     >
                         <el-option
-                            v-for="item in achievementStore.selectVersionList"
+                            v-for="item in selectVersionList"
                             :key="item.value"
                             :label="item.label"
                             :value="item.value"
@@ -181,10 +190,10 @@ const hadFilterClicked = ref(false)
             </div>
             <div class="achievement-filter-checkbox">
                 <div class="achievement-filter-checkbox-input" :class="{'achievement-filter-flex': !hadFold}">
-                    <el-checkbox v-model="achievementStore.incompletePriority" label="未完成成就优先" :size= 'isMobile ? "default" : "large"' />   
+                    <el-checkbox v-model="incompletePriority" label="未完成成就优先" :size= 'isMobile ? "default" : "large"' />   
                 </div>
                 <div class="achievement-filter-checkbox-input" :class="{'achievement-filter-flex': !hadFold}">
-                    <el-checkbox v-model="achievementStore.selectAll" :label="[1005, 1009].includes(achievementStore.showSecondClassId) ? '全选本页(多选一成就除外)' : '全选本页'" :size= 'isMobile ? "default" : "large"'  @click="confirmSelectAll"/>
+                    <el-checkbox v-model="selectAll" :label="pageHasMultipleChoice ? '全选本页(多选一成就除外)' : '全选本页'" :size= 'isMobile ? "default" : "large"'  @click="confirmSelectAll"/>
                     <div style="flex:1 0 0"></div>
                     <div class="achievement-filter-fold-up" v-if="!hadFold" @click="hadFold = true">
                         <el-icon class="el-icon--right">

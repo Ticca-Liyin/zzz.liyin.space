@@ -2,6 +2,7 @@
 import UpdateLog from '@/views/Setting/UpdateLog.vue'
 import AccountManage from '@/views/Setting/AccountManage.vue'
 import ThemeSetting from '@/views/Setting/ThemeSetting.vue'
+import CloudSync from '@/views/Setting/CloudSync.vue'
 </script>
 
 <template>
@@ -11,6 +12,8 @@ import ThemeSetting from '@/views/Setting/ThemeSetting.vue'
         <ThemeSetting />
 
         <AccountManage />
+
+        <CloudSync />
 
         <!-- <div class="setting-title">关于：</div> -->
         <div class="setting-title">如果你有什么好的想法和建议，或者是发现网页中的bug，可以通过以下方式联系我：</div>

@@ -1,20 +1,25 @@
 <script setup>
-import { ArrowDown } from '@element-plus/icons-vue'
+import { ArrowDown, CloseBold, Select, MoreFilled } from '@element-plus/icons-vue'
 import UpdateLogDialog from '@/views/UpdateLog/index.vue'
 import { useUserInfoStore } from '@/stores/userInfo'
 import { useAuthorStore } from '@/stores/author'
 import { useCharacterStore } from '@/stores/character'
 import { useIsMobileStore } from '@/stores/isMobile'
 import { useThemeStore } from '@/stores/theme'
+import { useAccountStore } from '@/stores/cloudSync/account'
+import { useSyncStatusStore } from '@/stores/cloudSync/syncStatus'
 import { onMounted } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useRoute } from 'vue-router';
+import { setAccountByService } from '@/utils/setAccountByService'
+import { handleDataSync } from '@/utils/handleDataSync'
+import { SyncStatusCode } from '@/types/syncStatusCode'
 
 const route = useRoute()
 
 const userInfoStore = useUserInfoStore()
 const { userInfoList, currentUserInfo } = storeToRefs(userInfoStore)
-const { getUserInfo, handleCurrentTokenID } = userInfoStore
+const { handleCurrentTokenID } = userInfoStore
 
 const authorStore = useAuthorStore()
 const { initialAuthorsInfo } = authorStore
@@ -27,6 +32,12 @@ const { isMobile } = storeToRefs(isMobileStore)
 
 const themeStore = useThemeStore()
 const { isDark } = storeToRefs(themeStore)
+
+const accountStore = useAccountStore();
+const { isLogin } = storeToRefs(accountStore);
+
+const syncStatusStore = useSyncStatusStore();
+const { syncStatus } = storeToRefs(syncStatusStore);
 
 const navList = [
     {
@@ -43,10 +54,13 @@ const navList = [
     }
 ]
 
-onMounted(() => {
-    getUserInfo()
-    initialAuthorsInfo()
-    initialCharactersInfo()
+onMounted(async () => {
+    let promises = [
+        initialAuthorsInfo(),
+        initialCharactersInfo(),
+        setAccountByService().then(() => handleDataSync())
+    ];
+    await Promise.allSettled(promises);
 })
 
 </script>
@@ -62,9 +76,18 @@ onMounted(() => {
         <div class="ly-header-right">
             <el-dropdown class="dropdown-user" :trigger="isMobile ? 'click' : 'hover'">
                 <div class="user-info">
-                    <div class="user-avatar">
-                        <img :src='getCharacterAvatar(currentUserInfo?.avatar)' 
-                            :alt="getCharacterAvatarName(currentUserInfo?.avatar)">
+                    <div class="user-avatar-wrapper">
+                        <div class="user-avatar">
+                            <img :src='getCharacterAvatar(currentUserInfo?.avatar)' 
+                                :alt="getCharacterAvatarName(currentUserInfo?.avatar)">
+                        </div>
+                        <template v-if="isLogin">
+                            <el-icon class="user-sync-status" :class="{'failed': syncStatus === SyncStatusCode.FAILED}" :size="10">
+                                <CloseBold v-if="syncStatus === SyncStatusCode.FAILED" />
+                                <Select v-else-if="syncStatus === SyncStatusCode.SUCCESS" />
+                                <MoreFilled v-else-if="syncStatus === SyncStatusCode.SYNCING" />
+                            </el-icon>
+                        </template>
                     </div>
                     <div class="user-content">
                         <div class="user-name"> {{ currentUserInfo?.name }} </div>
@@ -173,18 +196,35 @@ a {
 .user-info:hover{
     background-color: var(--liyin-userinfo-hover-bg-color);
 }
+.user-avatar-wrapper {
+    margin-right: 5px;
+    position: relative;
+}
 .user-avatar{
     width: 40px;
     height: 40px;
     border-radius: 50%;
     overflow: hidden;
-    margin-right: 5px;
     border: 2px solid var(--liyin-char-avatar-border-color);
     background-color: var(--liyin-char-avatar-bg-color);
 }
 .user-avatar img{
     width: 100%;
     height: 100%;
+}
+.user-avatar-wrapper .user-sync-status {
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    width: 14px;
+    height: 14px;
+    color: #fff;
+    border-radius: 50%;
+    background-color: var(--liyin-ach-selected-color);
+    padding: 1px;
+}
+.user-sync-status.failed{
+    background-color: var(--el-color-danger);
 }
 .user-content{
     width: 70px;

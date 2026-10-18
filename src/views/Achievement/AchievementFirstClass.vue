@@ -1,12 +1,16 @@
 <script setup>
-import { ArrowRight } from '@element-plus/icons-vue';
+import { ArrowRight } from '@element-plus/icons-vue'
 import { computed } from 'vue'
-import { storeToRefs } from 'pinia';
-import { useAchievementStore } from '@/stores/achievement';
+import { storeToRefs } from 'pinia'
+import { useAchievementStore } from '@/stores/achievement/achievement';
+import { useAchievementShowSeriesStore } from '@/stores/achievement/achievementShowSeries'
 import { useIsMobileStore } from '@/stores/isMobile'
 
 const achievementStore = useAchievementStore();
-const { achievementFirstClasses, showFirstClassId, showSecondClassId } = storeToRefs(achievementStore)
+const { achievementFirstClasses } = storeToRefs(achievementStore)
+
+const achievementShowSeriesStore = useAchievementShowSeriesStore()
+const { showFirstClassId, showSecondClassId, isShowAllSecondClass } = storeToRefs(achievementShowSeriesStore)
 
 // 按 Priority 排序展示第一分类
 const showFirstClasses = computed(() => {
@@ -32,7 +36,7 @@ const props = defineProps({
       </div>
     </template>
     <RouterLink v-for="firstClass in showFirstClasses" :key="firstClass.Id" 
-    :to="`/achievement/${firstClass.Id}/${showSecondClassId}`" v-preventDragStart="true">
+    :to="`/achievement/${firstClass.Id}/${isShowAllSecondClass ? firstClass.Id : showSecondClassId}`" v-preventDragStart="true">
       <div class="achievement-first-class-select-name" :class="{'selected': showFirstClassId === firstClass.Id}">{{ firstClass.Name }}</div>
     </RouterLink>
   </el-popover>

@@ -1,5 +1,6 @@
 import {ref, computed } from 'vue'
 import { defineStore } from 'pinia'
+import { uploadAccountToCloud, deleteAccountForCloud, uploadCurrentAccountToCloud } from '@/utils/achievementCloudSync'
 
 export const useUserInfoStore = defineStore('userInfo', () => {
     const userInfoList = ref({})
@@ -9,6 +10,7 @@ export const useUserInfoStore = defineStore('userInfo', () => {
     const getUserInfo = () => {
         // 从缓存中读取名为 USERINFO_KEY 的数据
         const tempUserInfo = localStorage.getItem(USERINFO_KEY)
+        const now = new Date().getTime();
 
         // 检查是否存在名为 USERINFO_KEY 的数据
         if (tempUserInfo !== null) {
@@ -22,12 +24,14 @@ export const useUserInfoStore = defineStore('userInfo', () => {
                 // 数据不合法，重置为默认值
                 userInfoList.value = {
                     currentTokenID: 1,
+                    currentTokenIDLastUpdateTime: now,
                     list: {
                         1:{
                             tokenID: 1,
                             avatar: 1001,
-                            uid: 10000000, 
-                            name: "绳匠", 
+                            uid: 10000000,
+                            name: "绳匠",
+                            lastUpdateTime: now
                         }
                     }
                 }
@@ -42,17 +46,34 @@ export const useUserInfoStore = defineStore('userInfo', () => {
                     1:{
                         tokenID: 1,
                         avatar: 1001,
-                        uid: 10000000, 
-                        name: "绳匠", 
+                        uid: 10000000,
+                        name: "绳匠",
+                        lastUpdateTime: now
                     }
                 }
                 valid = false
             }
+            // #region lastUpdateTime 属性缺失补充
+            else {
+                for(const tokenID in userInfoList.value.list){
+                    if(userInfoList.value.list[tokenID].lastUpdateTime === undefined || typeof userInfoList.value.list[tokenID].lastUpdateTime !== "number"){
+                        userInfoList.value.list[tokenID].lastUpdateTime = now
+                        valid = false
+                    }
+                }
+            }
+            // #endregion
 
             // 判断 currentTokenID 是否存在且是否在 list 中
             if(userInfoList.value.currentTokenID === undefined || userInfoList.value.list[userInfoList.value.currentTokenID] === undefined){
                 // currentTokenID 充值为 list 中的第一个 tokenID
                 userInfoList.value.currentTokenID = Object.keys(userInfoList.value.list)[0]
+                valid = false
+            }
+
+            // 判断 currentTokenIDLastUpdateTime 是否存在且是否为数字
+            if(userInfoList.value.currentTokenIDLastUpdateTime === undefined || typeof userInfoList.value.currentTokenIDLastUpdateTime !== "number"){
+                userInfoList.value.currentTokenIDLastUpdateTime = now
                 valid = false
             }
 
@@ -64,12 +85,14 @@ export const useUserInfoStore = defineStore('userInfo', () => {
             // 数据不存在，执行相应的操作
             userInfoList.value = {
                 currentTokenID: 1,
+                currentTokenIDLastUpdateTime: now,
                 list: {
                     1:{
                         tokenID: 1,
                         avatar: 1001,
-                        uid: 10000000, 
-                        name: "绳匠", 
+                        uid: 10000000,
+                        name: "绳匠",
+                        lastUpdateTime: now
                     }
                 }
             }
@@ -81,13 +104,24 @@ export const useUserInfoStore = defineStore('userInfo', () => {
         localStorage.setItem(USERINFO_KEY, JSON.stringify(userInfoList.value))
     }
 
+    const resetUserInfo = (newUserInfo) => {
+        localStorage.setItem(USERINFO_KEY, JSON.stringify(newUserInfo));
+        getUserInfo();
+    }
+
     const currentUserInfo = computed(() => {
         return userInfoList.value?.list?.[userInfoList.value?.currentTokenID]
     })
 
     const handleCurrentTokenID = (tokenID) => {
+        const updateTime = new Date().getTime()
         userInfoList.value.currentTokenID = tokenID
+        userInfoList.value.currentTokenIDLastUpdateTime = updateTime
         saveUserInfo()
+        uploadCurrentAccountToCloud({ 
+            tokenId: tokenID, 
+            updateTime
+        })
     }
 
     const addUserInfo = (name, uid, avatar) => {
@@ -114,14 +148,24 @@ export const useUserInfoStore = defineStore('userInfo', () => {
                 maxTokenID = tokenid
             }
         }
-        userInfoList.value.list[maxTokenID + 1] = {
-            tokenID: maxTokenID + 1,
+        if (maxTokenID < 1) maxTokenID = 1
+        const tokenId = maxTokenID + 1
+        const updateTime = new Date().getTime();
+        userInfoList.value.list[tokenId] = {
+            tokenID: tokenId,
             avatar,
             uid,
             name,
+            lastUpdateTime: updateTime
         }
 
         saveUserInfo()
+        uploadAccountToCloud(tokenId, {
+            avatar,
+            uid,
+            name,
+            updateTime
+        });
     }
 
     const editUserInfo = (tokenid, name, uid, avatar) => {
@@ -144,10 +188,18 @@ export const useUserInfoStore = defineStore('userInfo', () => {
                 return
             }
         }
+        const updateTime = new Date().getTime()
         userInfoList.value.list[tokenid].name = name
         userInfoList.value.list[tokenid].uid = uid
         userInfoList.value.list[tokenid].avatar = avatar
+        userInfoList.value.list[tokenid].lastUpdateTime = updateTime
         saveUserInfo()
+        uploadAccountToCloud(tokenid, {
+            avatar,
+            uid,
+            name,
+            updateTime
+        });
     }
 
     const deleteUserInfo = (tokenid) => {
@@ -157,11 +209,9 @@ export const useUserInfoStore = defineStore('userInfo', () => {
             {
                 confirmButtonText: '确认',
                 cancelButtonText: '取消',
-                // type: 'warning',
             }
         )
         .then(() => {
-            // console.log('确认删除')
             if(!userInfoList.value.list[tokenid]) {
                 ElMessage({
                     showClose: true,
@@ -180,14 +230,21 @@ export const useUserInfoStore = defineStore('userInfo', () => {
             }
     
             delete userInfoList.value.list[tokenid]
-            if(userInfoList.value.currentTokenID === tokenid)   
+            if(userInfoList.value.currentTokenID === tokenid) {
+                const updateTime = new Date().getTime()
                 userInfoList.value.currentTokenID = Object.values(userInfoList.value.list ?? {})[0].tokenID
+                userInfoList.value.currentTokenIDLastUpdateTime = updateTime
+                uploadCurrentAccountToCloud({ 
+                    tokenId: userInfoList.value.currentTokenID, 
+                    updateTime
+                })
+            }
     
             saveUserInfo()
+            deleteAccountForCloud(tokenid)
             updateKeyStorage()
         })
         .catch(() => {
-            // console.log('取消删除')
         })
     }
 
@@ -199,14 +256,10 @@ export const useUserInfoStore = defineStore('userInfo', () => {
 
     const updateKeyStorage = () => {
         for (const key of STORAGE_KEY_LIST) {
-            // 从缓存中读取名为 key 的数据
             const storageItem = localStorage.getItem(key)
 
-            // 检查是否存在名为 key 的数据
             if (storageItem !== null) {
-                // 数据存在，将其从字符串转换为对象
                 let storageJson = JSON.parse(storageItem)
-                console.log(storageJson)
                 const userTokenIDs = Object.keys(userInfoList.value.list)
     
                 for(const tokenID in storageJson){
@@ -215,18 +268,19 @@ export const useUserInfoStore = defineStore('userInfo', () => {
                     }
                 }
                 localStorage.setItem(key, JSON.stringify(storageJson))
-                console.log(storageJson)
             } 
         }
     }
 
+    getUserInfo()
+
     return {
         userInfoList,
         currentUserInfo,
-        getUserInfo,
         handleCurrentTokenID,
         addUserInfo,
         editUserInfo,
-        deleteUserInfo
+        deleteUserInfo,
+        resetUserInfo
     }
 })

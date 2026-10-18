@@ -1,7 +1,7 @@
 <script setup>
-import { useSettingStore } from '@/stores/achievementSetting.js'
+import { useAchievementSettingStore } from '@/stores/achievement/setting/achievementSetting.js'
 
-const settingStore = useSettingStore()
+const settingStore = useAchievementSettingStore()
 
 </script>
 

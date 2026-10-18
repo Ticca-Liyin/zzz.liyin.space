@@ -1,12 +1,16 @@
 <script setup>
 import { ref } from 'vue';
-import { useAchievementStore } from '@/stores/achievement';
-import { useAchievementCustomNotAchievedStore } from '@/stores/achievementCustomNotAchieved'
+import { useAchievementStore } from '@/stores/achievement/achievement';
+import { useUserAchievementStore } from '@/stores/achievement/userAchievement'
+import { useAchievementCustomNotAchievedStore } from '@/stores/achievement/achievementCustomNotAchieved'
 import { storeToRefs } from 'pinia';
 
 const achievementStore = useAchievementStore()
 const { achievements } = storeToRefs(achievementStore)
-const { handleUserAchievementList, handleAchevementStatus, saveUserAchievement } = achievementStore
+const { handleAchevementStatus } = achievementStore
+
+const userAchievementStore = useUserAchievementStore()
+const { handleUserAchievementList, saveUserAchievement } = userAchievementStore
 
 const achievementCustomNotAchievedStore = useAchievementCustomNotAchievedStore()
 const { initUserCustomNotAchievedList } = achievementCustomNotAchievedStore
